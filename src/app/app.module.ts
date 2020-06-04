@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AcceuilModule } from './acceuil/acceuil.module';
+import { AuthentificationModule } from './authentification/authentification.module';
+import { PosterModule } from './poster/poster.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { AcceuilModule } from './acceuil/acceuil.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AcceuilModule
+    AcceuilModule,
+    AuthentificationModule,
+    PosterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

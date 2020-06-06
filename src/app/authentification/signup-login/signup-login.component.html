@@ -1,70 +1,71 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous">
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <div class="container" id="container">
-        <div class="form-container sign-up-container" style="overflow: scroll;">
-            <form action="#">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Surname" />
-                <input type="text" placeholder="Username" />
-                <input type="phone" placeholder="Phone" />
-                <input type="email" placeholder="Email" />
-                <select>
-                    <option value="" disabled selected>Sexe</option>
-                    <option value="man">Male</option>
-                    <option value="women">Female</option>
-                </select>
-                <input type="password" placeholder="Password" />
-                <input type="password" placeholder="Confirm Password" />
-                <button>Sign Up</button>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Sign in</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
-            </form>
-        </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
-                </div>
-            </div>
-        </div>
+  <div class="form-container sign-up-container" style="overflow: scroll;">
+    <form action="#">
+      <h1>Create Account</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your email for registration</span>
+      <input type="text" placeholder="Name" />
+      <input type="text" placeholder="Surname" />
+      <input type="text" placeholder="Username" />
+      <input type="phone" placeholder="Phone" />
+      <input type="email" placeholder="Email" />
+      <select>
+        <option value="" disabled selected>Sexe</option>
+        <option value="man">Male</option>
+        <option value="women">Female</option>
+      </select>
+      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Confirm Password" />
+      <button>Sign Up</button>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form >
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your account</span>
+      <input type="text" [(ngModel)]="user.username" placeholder="Username" name="username" />
+      <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" />
+      <a href="#">Forgot your password?</a>
+      <button type="submit" (click)="login()">Sign In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button class="ghost" id="signIn">Sign In</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <button class="ghost" id="signUp">Sign Up</button>
+      </div>
     </div>
+  </div>
+</div>
 
 <div class="footer">
-<b>	Follow me on </b>
-	<div class="icons">
-		<a href="https://github.com/kvaibhav01" target="_blank" class="social"><i class="fab fa-github"></i></a>
-		<a href="https://www.instagram.com/vaibhavkhulbe143/" target="_blank" class="social"><i class="fab fa-instagram"></i></a>
-		<a href="https://medium.com/@vaibhavkhulbe" target="_blank" class="social"><i class="fab fa-medium"></i></a>
-		<a href="https://twitter.com/vaibhav_khulbe" target="_blank" class="social"><i class="fab fa-twitter-square"></i></a>
-		<a href="https://linkedin.com/in/vaibhav-khulbe/" target="_blank" class="social"><i class="fab fa-linkedin"></i></a>
-		</div>
-	</div>
+  <b> Follow me on </b>
+  <div class="icons">
+    <a href="https://github.com/kvaibhav01" target="_blank" class="social"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/vaibhavkhulbe143/" target="_blank" class="social"><i
+        class="fab fa-instagram"></i></a>
+    <a href="https://medium.com/@vaibhavkhulbe" target="_blank" class="social"><i class="fab fa-medium"></i></a>
+    <a href="https://twitter.com/vaibhav_khulbe" target="_blank" class="social"><i
+        class="fab fa-twitter-square"></i></a>
+    <a href="https://linkedin.com/in/vaibhav-khulbe/" target="_blank" class="social"><i class="fab fa-linkedin"></i></a>
+  </div>
+</div>

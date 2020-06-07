@@ -17,6 +17,7 @@ export class SectionComponent implements OnInit {
         return false;
       });
     });
+    
   }
 
 }

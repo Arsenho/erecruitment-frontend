@@ -5,10 +5,12 @@ import { FooterComponent } from './footer/footer.component';
 import { Section1Component } from './section1/section1.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import {MatIconModule} from '@angular/material/icon'; 
-import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { SectionOneComponent } from './section-one/section-one.component';
+import { SectionTwoComponent } from './section-two/section-two.component'; 
 
 @NgModule({
-  declarations: [HeaderComponent, SectionComponent, FooterComponent, Section1Component, HomepageComponent],
+  declarations: [SectionTwoComponent,SectionOneComponent ,HeaderComponent, SectionComponent, FooterComponent, Section1Component, HomepageComponent, SectionOneComponent, SectionTwoComponent],
   imports: [
   
     MatIconModule,
@@ -16,7 +18,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   
   ],
   exports:[HeaderComponent, SectionComponent, FooterComponent,HomepageComponent,MatIconModule,
-    MatIconModule,MatToolbarModule
+    MatIconModule,MatToolbarModule,SectionTwoComponent,SectionOneComponent , Section1Component
   ]
 })
 export class AcceuilModule { }

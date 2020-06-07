@@ -44,4 +44,17 @@ export class SignupLoginComponent implements OnInit {
       }
     )
   }
+
+  signup(){
+    console.log(this.user);
+
+    /*this.loginService.createUser(this.user).subscribe(
+      (data) => {
+        this.user = data
+        if (this.user.is_active){
+          this.router.navigate(['/login'])
+        }
+      }
+    )*/
+  }
 }

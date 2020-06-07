@@ -11,19 +11,19 @@
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <span>or use your email for registration</span>
-      <input type="text" placeholder="Name" />
-      <input type="text" placeholder="Surname" />
-      <input type="text" placeholder="Username" />
-      <input type="phone" placeholder="Phone" />
-      <input type="email" placeholder="Email" />
-      <select>
-        <option value="" disabled selected>Sexe</option>
-        <option value="man">Male</option>
-        <option value="women">Female</option>
+      <input type="text" [(ngModel)]="user.first_name" name='first_name' placeholder="first name" />
+      <input type="text" [(ngModel)]="user.last_name" name='last_name' placeholder="last name" />
+      <input type="text" [(ngModel)]="user.username" name='username' placeholder="username" />
+      <input type="phone" [(ngModel)]="user.phone_number" name='phone_number' placeholder="phone" />
+      <input type="email" [(ngModel)]="user.email" name='email' placeholder="email" />
+      <select [(ngModel)]="user.gender" name='gender'>
+        <option value="" disabled selected>gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
       </select>
-      <input type="password" placeholder="Password" />
+      <input type="password" [(ngModel)]="user.password" name='password' placeholder="Password" />
       <input type="password" placeholder="Confirm Password" />
-      <button>Sign Up</button>
+      <button type="submit" (click)="signup()">Sign Up</button>
     </form>
   </div>
   <div class="form-container sign-in-container">

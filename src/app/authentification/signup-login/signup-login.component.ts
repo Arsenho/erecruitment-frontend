@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignupLoginComponent implements OnInit {
   user;
+  errors = null;
   constructor(private loginService: LoginService,
     private router: Router) {
       this.user = {
@@ -34,27 +35,46 @@ export class SignupLoginComponent implements OnInit {
     this.loginService.login(this.user).subscribe(
       (data: any) => {
         this.user = data
+        console.log(data);
+
         if (this.user.is_active){
           this.router.navigate(['/home'])
         }
       },
       (err) => {
-        console.error(err);
-
+        console.log(err.error);
+        this.errors = err.error
       }
     )
   }
 
   signup(){
     console.log(this.user);
-
-    /*this.loginService.createUser(this.user).subscribe(
-      (data) => {
-        this.user = data
-        if (this.user.is_active){
-          this.router.navigate(['/login'])
+    if (this.user.nature == 'candidate'){
+      this.loginService.createCandidate(this.user).subscribe(
+        (data) => {
+          this.user = data
+          if (this.user.is_active){
+            this.router.navigate(['/login'])
+          }
+        },
+        (err) => {
+          this.errors = err
         }
-      }
-    )*/
+      )
+    }else if (this.user.nature == 'employer'){
+      this.loginService.createEmployer(this.user).subscribe(
+        (data) => {
+          this.user = data
+          if (this.user.is_active){
+            this.router.navigate(['/login'])
+          }
+        },
+        (err) => {
+          this.errors = err
+        }
+      )
+    }
+
   }
 }

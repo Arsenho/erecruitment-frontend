@@ -10,7 +10,11 @@
         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      <span>or use your email for registration</span>
+      <select [(ngModel)]="user.nature" name='nature'>
+        <option value="" disabled selected>Nature du compte</option>
+        <option value="candidate">Candidat</option>
+        <option value="employer">Employer</option>
+      </select>
       <input type="text" [(ngModel)]="user.first_name" name='first_name' placeholder="first name" />
       <input type="text" [(ngModel)]="user.last_name" name='last_name' placeholder="last name" />
       <input type="text" [(ngModel)]="user.username" name='username' placeholder="username" />
@@ -26,7 +30,7 @@
       <button type="submit" (click)="signup()">Sign Up</button>
     </form>
   </div>
-  <div class="form-container sign-in-container">
+  <div class="form-container sign-in-container" id="signin">
     <form >
       <h1>Sign in</h1>
       <div class="social-container">
@@ -35,6 +39,7 @@
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <span>or use your account</span>
+      <span *ngIf="errors != null">{{errors.error}}</span>
       <input type="text" [(ngModel)]="user.username" placeholder="Username" name="username" />
       <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" />
       <a href="#">Forgot your password?</a>

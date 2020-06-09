@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AcceuilModule } from './acceuil/acceuil.module';
 import { AuthentificationModule } from './authentification/authentification.module';
 import { PosterModule } from './poster/poster.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PosterModule } from './poster/poster.module';
     AppRoutingModule,
     AcceuilModule,
     AuthentificationModule,
-    PosterModule
+    PosterModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,22 @@
   background: rgb(103, 192, 103, 0.75);
   transition: all 0.3s ease 0s;
 }
+.btn-default {
+  font-family: Raleway-SemiBold;
+  font-size: 13px;
+  color: black;
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid rgb(103, 192, 103, 0.75);
+  border-radius: 40px;
+  background: white;
+  transition: all 0.3s ease 0s;
+}
+.btn-default:hover {
+  color: #FFF;
+  background: rgb(103, 192, 103, 0.75);
+  border: 2px solid rgb(103, 192, 103, 0.75);
+}
 
 .btn-success:hover {
   color: #FFF;

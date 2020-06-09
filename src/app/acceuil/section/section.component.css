@@ -6,8 +6,10 @@
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(rgba(247, 242, 242, 0.5), rgba(0,0,0,.5)), url("./../../../assets/img/entretien.jpg");
+  background-repeat:no-repeat;
+background-position:left top;
   width: 100%;
-  height: 800px;
+  height: 600px;
   background-size: 100%;
 }
 
@@ -229,13 +231,13 @@ span{
 /*LINEAR GRADIENT*/
 
 .btn-linear{
-  border-color: teal;
-  color: teal;
+  border-color: darkslategrey;
+  color: darkslategrey;
 }
 
 .btn-linear{
   transition: all 0.3s ease-in-out;
-  background: linear-gradient(teal,teal) no-repeat;
+  background: linear-gradient(darkslategrey,darkslategrey) no-repeat;
   background-size: 0% 0%;
     
 }
@@ -279,40 +281,3 @@ span{
   background-size: 100% 100%;
   color: #fff; 
 }
-
-/*radial*/
-
-
-@keyframes outer-bounce{
-  0%{
-    box-shadow: 0px 0px 0px 0px tomato inset;
-  }
-  
-  40%{
-    box-shadow: 0px 0px 0px 50px tomato inset;
-  }
-  
-  55%{
-    box-shadow: 0px 0px 0px 10px tomato inset;
-  }
-  
-  70%{
-    box-shadow: 0px 0px 0px 50px tomato inset;
-  }
-  
-  85%{
-    box-shadow: 0px 0px 0px 25px tomato inset;
-  }
-  
-  92%{
-    box-shadow: 0px 0px 0px 50px tomato inset;
-  }
-  96%{
-    box-shadow: 0px 0px 0px 35px tomato inset;
-  }
-  100%{
-    box-shadow: 0px 0px 0px 50px tomato inset;
-  }
-  
-}
-

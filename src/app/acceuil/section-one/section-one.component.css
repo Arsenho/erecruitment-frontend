@@ -1,3 +1,7 @@
+.container h2, .container p{
+    text-align: center;
+  
+}
 .sblogos {
     height: 150px; /* Change this value to make logos smaller / bigger */
     padding-left: 15px;

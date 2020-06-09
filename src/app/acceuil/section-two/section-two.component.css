@@ -1,4 +1,18 @@
-
+div #more_section_two{
+	margin-bottom: 0em;
+}
+.container h2, .container p{
+    text-align: center;
+    
+}
+.container a.more{
+	margin-left: 27rem;
+	margin-top: 3rem;
+	text-decoration: underline;
+	color: teal;
+	font-size: 130%;
+	font-weight: 500;
+}
 html {
 	background-color: #eeeeee;
 }
@@ -54,11 +68,7 @@ h1 {
 	font-weight: 300;
 	letter-spacing: -1.5px;
 }
-h2 {
-	font-size: 60px;
-	font-weight: 300;
-	letter-spacing: -0.5px;
-}
+
 h3 {
 	font-size: 48px;
 	font-weight: 400;

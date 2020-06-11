@@ -7,11 +7,13 @@ import { AcceuilModule } from './acceuil/acceuil.module';
 import { AuthentificationModule } from './authentification/authentification.module';
 import { PosterModule } from './poster/poster.module';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
     AcceuilModule,
     AuthentificationModule,
     PosterModule,
-    MatIconModule
+    MatIconModule,
+    NgxPaginationModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

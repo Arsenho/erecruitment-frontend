@@ -10,58 +10,123 @@ export class AppelOffreComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const formBtn1 = document.querySelector("#btn-1")
-    const formBtnPrev2 = document.querySelector("#btn-2-prev")
-    const formBtnNext2 = document.querySelector("#btn-2-next")
-    const formBtn3 = document.querySelector("#btn-3")
+  
 
-    formBtn1.addEventListener("click", function(e) {
-      gotoNextForm(formBtn1, formBtnNext2, 1, 2)
-      e.preventDefault()
-    })
+$(document).ready(function(){
+
+  var current_fs, next_fs, previous_fs; //fieldsets
+  var opacity;
+  var current = 1;
+  var steps = $("fieldset").length;
+  
+  setProgressBar(current);
+  
+  $(".next").click(function(){
+  
+  current_fs = $(this).parent();
+  next_fs = $(this).parent().next();
+  
+  //Add Class Active
+  $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+  
+  //show the next fieldset
+  next_fs.show();
+  //hide the current fieldset with style
+  current_fs.animate({opacity: 0}, {
+  step: function(now) {
+  // for making fielset appear animation
+  opacity = 1 - now;
+  
+  current_fs.css({
+  'display': 'none',
+  'position': 'relative'
+  });
+  next_fs.css({'opacity': opacity});
+  },
+  duration: 500
+  });
+  setProgressBar(++current);
+  });
+  
+  $(".previous").click(function(){
+  
+  current_fs = $(this).parent();
+  previous_fs = $(this).parent().prev();
+  
+  //Remove class active
+  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+  
+  //show the previous fieldset
+  previous_fs.show();
+  
+  //hide the current fieldset with style
+  current_fs.animate({opacity: 0}, {
+  step: function(now) {
+  // for making fielset appear animation
+  opacity = 1 - now;
+  
+  current_fs.css({
+  'display': 'none',
+  'position': 'relative'
+  });
+  previous_fs.css({'opacity': opacity});
+  },
+  duration: 500
+  });
+  setProgressBar(--current);
+  });
+  
+  function setProgressBar(curStep){
+  
+  
+
+  }
+  
+  $(".submit").click(function(){
+  return false;
+  })
+  
+  });
+  
+
+  $(document).ready(function() {
+
+  
+    // when the state dropdown changes
+    $( "#country" ).change(function() {
+      
+      // check country
+      if ( $(this).val() == "aucune" ) {
+        // land of the free
+        $(".aucune").show();
+        $(".choix").hide();
+        // clear the values in case they picked the wrong country
+        $(".choix select").val("");
+      } else if ( $(this).val() == "chaussure" ) {
+        // oh canada
+        $(".aucune").hide();
+        $(".choix").show();
+        // clear the values in case they picked the wrong country
+        $(".aucune select").val("");
+      }
+        
+  
+  
+      
+      
     
-    // Next button listener of form 2
-    formBtnNext2.addEventListener("click", function(e) {
-      gotoNextForm(formBtnNext2, formBtn3, 2, 3)
-      e.preventDefault()
-    })
+    }); // on country select change END
     
-    // Previous button listener of form 2
-    formBtnPrev2.addEventListener("click", function(e) {
-      gotoNextForm(formBtnNext2, formBtn1, 2, 1)
-      e.preventDefault()
-    })
     
-    // Button listener of form 3
-    formBtn3.addEventListener("click", function(e) {
-      document.querySelector(`.step--3`).classList.remove("step-active")
-      document.querySelector(`.step--4`).classList.add("step-active")
-      formBtn3.parentElement.style.display = "none"
-      document.querySelector(".form--message").innerHTML = `
-       <h1 class="form--message-text">Your account is successfully created </h1>
-       `
-      e.preventDefault()
-    })
-    const gotoNextForm = (prev, next, stepPrev, stepNext) => {
-      // Get form through the button
-      const prevForm = prev.parentElement
-      const nextForm = next.parentElement
-      const nextStep = document.querySelector(`.step--${stepNext}`)
-      const prevStep = document.querySelector(`.step--${stepPrev}`)
-      // Add active/inactive classes to both previous and next form
-      nextForm.classList.add("form-active")
-      nextForm.classList.add("form-active-animate")
-      prevForm.classList.add("form-inactive")
-      // Change the active step element
-      prevStep.classList.remove("step-active")
-      nextStep.classList.add("step-active")
-      // Remove active/inactive classes to both previous an next form
-      setTimeout(() => {
-        prevForm.classList.remove("form-active")
-        prevForm.classList.remove("form-inactive")
-        nextForm.classList.remove("form-active-animate")
-      }, 1000)
-    }
+  
+    
+    
+    
+  // document ready  
+  });
+  
+
+    
   }
 
 }

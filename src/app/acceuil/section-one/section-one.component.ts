@@ -33,7 +33,7 @@ $(function() {
     var $visibleBox;
     // if too few boxes, use random
     if ((random == "true" || random == 1) || ($hiddenBoxes.length < $visibleBoxes.length)) {
-      $visibleBox = $visibleBoxes.not('.active, .sb-animation-pause').random();
+      $visibleBox = $visibleBoxes.not('.active, .sb-animation-pause').fadeIn();
     } else {
       $visibleBox = $visibleBoxes.not('.active, .sb-animation-pause').first();
       // don't fire function when no free boxes

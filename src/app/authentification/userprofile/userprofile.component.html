@@ -15,7 +15,7 @@
             </ul>
           <div class="tab-content py-4">
                 <div class="tab-pane active" id="profile">
-                    <h5 class="mb-3"><b>User Profile</b></h5>
+                    <h5 class="mb-3"><b>General</b></h5>
                     <div class="row">
                         <div class="col-md-6">
                             <h6><b>Nom</b></h6>
@@ -42,6 +42,8 @@
                   
                </div>
                 <div class="tab-pane" id="messages">
+                   <app-table></app-table>
+                  
                                    </div>
                 <div class="tab-pane" id="edit">
                     <form role="form">
@@ -131,16 +133,19 @@
                             </div>
                         </div>
                     </form>
+                 
                 </div>
             </div>
         </div>
        <div class="col-lg-4 order-lg-1 text-center">
-            <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
-            <h6 class="mt-2">Upload a different photo</h6>
+            <img src="./../../../assets/img/4.jpg"  class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            <h6 class="mt-2">Upload une photo differente</h6>
+            <div style="border-color: black;">
             <label class="custom-file">
                 <input type="file" id="file" class="custom-file-input">
-                <span class="custom-file-control">Choose file</span>
+                <span class="custom-file-control"><u><a>Choose file</a></u></span>
             </label>
+        </div>
         </div>
     </div>
 </div> 

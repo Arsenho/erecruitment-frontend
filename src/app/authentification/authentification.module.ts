@@ -6,6 +6,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
+import { PosterModule } from '../poster/poster.module';
+
 
 
 
@@ -18,7 +20,8 @@ import {MatTableModule} from '@angular/material/table';
    
     MatTableModule,
     MatSortModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    PosterModule 
   ],
   exports:[SignupLoginComponent,UserprofileComponent]
 })

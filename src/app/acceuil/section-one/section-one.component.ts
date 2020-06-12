@@ -41,7 +41,7 @@ $(function() {
         setTimeout(fadeImage, interval);
       }
     }
-        var $hiddenBox = $hiddenBoxes.not('.active, .sb-animation-pause').random();
+        var $hiddenBox = $hiddenBoxes.not('.active, .sb-animation-pause').fadeIn();
     if (!$hiddenBoxes.length) return;
 
     var $hiddenContent = $hiddenBox.find('a');
@@ -74,7 +74,7 @@ $(function() {
   fadeCaller();
 });
 
-$.fn.random = function(){
+$.fn.fadeIn= function(){
   var ret = $();
   if(this.length > 0) {
     ret = ret.add(this[Math.floor((Math.random() * this.length))]);

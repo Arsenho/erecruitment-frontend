@@ -8,11 +8,13 @@ import { AuthentificationModule } from './authentification/authentification.modu
 import { PosterModule } from './poster/poster.module';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TestComponent,
    
   ],
   imports: [

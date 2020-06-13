@@ -5,6 +5,8 @@ import { UserprofileComponent } from './authentification/userprofile/userprofile
 import { AllAppelOffrePageComponent } from './poster/all-appel-offre-page/all-appel-offre-page.component';
 import { TableComponent } from './poster/table/table.component';
 import { AppelOffreComponent } from './poster/appel-offre/appel-offre.component';
+import { CompanieComponent } from './poster/companie/companie.component';
+import { TestComponent } from './test-offre/test/test.component';
 
 
 
@@ -13,7 +15,9 @@ const routes: Routes = [
    {path: 'userProfile', component: UserprofileComponent},
    {path: 'offres', component: AllAppelOffrePageComponent},
    {path:'table', component:TableComponent},
-   {path:'nouvelleOffre', component: AppelOffreComponent}
+   {path:'nouvelleOffre', component: AppelOffreComponent},
+   {path:'companie', component:CompanieComponent},
+   {path:'test', component:TestComponent}
    
 ];
 

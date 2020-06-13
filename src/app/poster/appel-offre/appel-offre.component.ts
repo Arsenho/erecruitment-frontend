@@ -92,23 +92,25 @@ $(document).ready(function(){
   $(document).ready(function() {
 
   
-    // when the state dropdown changes
-    $( "#country").change(function() {
+   
+    $( "#companie").change(function() {
+   
+      if ( $(this).val() == "Particulier") {
       
-      // check country
-      if ( $(this).val() == "aucune") {
-        // land of the free
-        $(".aucune").show();
-        $(".choix").hide();
-        // clear the values in case they picked the wrong country
-        $(".choix select").val("");
-      } else if ( $(this).val() == "chaussure" ) {
-        // oh canada
-        $(".aucune").hide();
-        $(".choix").show();
-        // clear the values in case they picked the wrong country
-        $(".aucune select").val("");
-      }   
+        $(".particulier").show();
+        $(".nouvelle").hide();
+      
+      } else if ( $(this).val() == "Nouvelle" ) {
+      
+        $(".nouvelle").show();
+        $(".particulier").hide();
+       
+      
+      }else{
+
+        $(".nouvelle").hide();
+        $(".particulier").hide();
+      }
     
     });  
   // document ready  

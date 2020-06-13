@@ -7,15 +7,12 @@
         <form id="msform">
           <!-- progressbar -->
           <ul id="progressbar">
-            <li class="active" id="account"><strong>Offre</strong></li>
-            <li id="personal"><strong>Poste</strong></li>
-            <li id="payment"><strong>Companie</strong></li>
-            <li id="confirm"><strong>Termine</strong></li>
+            <li class="active" id="steps"><strong><mat-icon>local_offer</mat-icon>Offre</strong></li>
+            <li id="personal"><strong><mat-icon>work</mat-icon>Poste</strong></li>
+            <li id="payment"><strong><mat-icon>home</mat-icon>Companie</strong></li>
+            <li id="confirm"><strong><mat-icon>done_all</mat-icon>Termine</strong></li>
           </ul>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0"
-              aria-valuemax="100"></div>
-          </div> <br> <!-- fieldsets -->
+       
           <fieldset>
             <div class="form-card">
               <div class="row">
@@ -28,14 +25,15 @@
               </div>
               <label class="fieldlabels">Titre: *</label>
               <input type="text" name="titre" placeholder="Recherche d'une menagere, Emploi Etudiant...etc" />
-              <label class="fieldlabels">Description de l'offre: *</label>
+
 
               <label class="fieldlabels">Date debut: *</label> <input type="Date" name="date_debut"
                 placeholder="aujourd'hui" />
-              <label class="fieldlabels">Date fin: *</label> 
+              <label class="fieldlabels">Date fin: *</label>
               <input type="Date" name="date_fin" placeholder="Demain" />
+              
 
-            </div> 
+            </div>
             <input type="button" name="next" class="next action-button" value="Next" />
 
           </fieldset>
@@ -60,17 +58,17 @@
               <input type="text" name="fcomp" placeholder="180000 FCFA" />
               <label class="fieldlabels">Type de contrat: *</label>
               <select id="inputState" class="form-control">
-               
-               <option selected="selected" disabled>Select</option>
-               <option value="cdi">CDI</option>
-               <option value="cdd">CDD</option>
-               <option value="ca">CA</option>
-               <option value="ctt">CTT</option>
-               <option value="cp">CP</option>
-               <option value="cui">CUI</option>
 
-             </select>
-             
+                <option selected="selected" disabled>Select</option>
+                <option value="cdi">CDI</option>
+                <option value="cdd">CDD</option>
+                <option value="ca">CA</option>
+                <option value="ctt">CTT</option>
+                <option value="cp">CP</option>
+                <option value="cui">CUI</option>
+
+              </select>
+
             </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button"
               name="previous" class="previous action-button-previous" value="Previous" />
           </fieldset>
@@ -85,45 +83,27 @@
 
 
               <label class="fieldlabels">Companie: *</label>
-              <select name="Companie" id="country">
+              <select name="Companie" id="companie">
                 <option disabled selected="selected">Select</option>
-                <option value="aucune">Aucune</option>
+                <option value="Particulier">Particulier</option>
+                <option value="Nouvelle">Nouvelle</option>
                 <option value="chaussure">chaussure</option>
               </select>
 
 
-              <div class="aucune" style="display:none;">
-
-
-
-                <label for="state">Nom Companie:</label>
-                <input name="nom" type="text" value="">
-
-                <label for="secteur">Secteur activite</label>
-                <select name="secteur" id="country">
-                  <option disabled selected="selected">Select</option>
-                  <option value="aucune">Agriculture</option>
-                  <option value="chaussure">Informatique</option>
-                </select>
-
-                <label class="fieldlabels">Email:</label>
-                <input type="email" name="email" placeholder="company@company">
-                <label class="fieldlabels">Site web:</label>
-                <input type="text" name="url" placeholder="url">
-                <label class="fieldlabels">Localisation:</label>
-                <input type="text" name="localisation" placeholder="localisation">
+              <div class="nouvelle" style="display:none;">
+                <button class="btn btn-primary" href="companie">Nouvelle companie</button>
               </div>
-              <!--  /.usa  -->
 
-              <div class="choix" style="display:none;">
+         
 
-
-                <label for="postalCode">Telephone</label>
-                <input name="postalCode" type="number" value="" maxlength="6">
-
+              <div class="particulier" style="display:none;">
+               <label for="description">Description</label>
+                <textarea name="description" type="text" value="">
+                </textarea>
 
               </div>
-                 
+
               <label for="secteur">Test :</label>
               <select name="secteur" id="test">
                 <option disabled selected="selected">Select</option>
@@ -134,17 +114,20 @@
                 <option value="test-Agriculture">Test-Agriculture</option>
               </select>
 
-             <div class="nouveauTest" id="nouveauTest" style="display:none;">
-              <button class="btn btn-success btn-lg" href="#">Nouveau Test</button>
-             </div>
-             <div class="config_test" id="testConfig" style="display: none;">
-             <label class="fieldlabels">Duree Test:</label>
-             <input type="number" name="duree" placeholder="90 min">
-             <label class="fieldlabels">Date debut test:</label>
-             <input type="date" name="date_debut" placeholder="09/10/2020">
-             <label class="fieldlabels">Date fin test:</label>
-             <input type="date" name="date_fin" placeholder="09/10/2020">
-            </div>
+              <div class="nouveauTest" id="nouveauTest" style="display:none;">
+                <button class="btn btn-success btn-lg" href="#">Nouveau Test</button>
+              </div>
+              <div class="config_test" id="testConfig" style="display: none;">
+                <label class="fieldlabels">Duree Test:</label>
+                <input type="number" name="duree" placeholder="90 min">
+                <label class="fieldlabels">Nombre de questions: *</label>
+                <input type="number" name="nombre_question" placeholder="20" />
+                <label class="fieldlabels">Date debut test:</label>
+                <input type="date" name="date_debut" placeholder="09/10/2020">
+                <label class="fieldlabels">Date fin test:</label>
+                <input type="date" name="date_fin" placeholder="09/10/2020">
+              
+              </div>
             </div>
             <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button"
               name="previous" class="previous action-button-previous" value="Previous" />
@@ -159,13 +142,14 @@
                   <h2 class="steps">Etape 4 - 4</h2>
                 </div>
               </div> <br><br>
-              <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
+              <h2 class="purple-text text-center"><strong>SUCCES !</strong></h2> <br>
               <div class="row justify-content-center">
                 <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+
               </div> <br><br>
               <div class="row justify-content-center">
                 <div class="col-7 text-center">
-                  <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
+                  <h5 class="purple-text text-center">Votre offre a ete bien cree</h5>
                 </div>
               </div>
             </div>

@@ -93,10 +93,10 @@ $(document).ready(function(){
 
   
     // when the state dropdown changes
-    $( "#country" ).change(function() {
+    $( "#country").change(function() {
       
       // check country
-      if ( $(this).val() == "aucune" ) {
+      if ( $(this).val() == "aucune") {
         // land of the free
         $(".aucune").show();
         $(".choix").hide();
@@ -108,22 +108,38 @@ $(document).ready(function(){
         $(".choix").show();
         // clear the values in case they picked the wrong country
         $(".aucune select").val("");
-      }
-        
-  
-  
-      
-      
+      }   
     
-    }); // on country select change END
-    
-    
-  
-    
-    
-    
+    });  
   // document ready  
   });
+
+
+
+
+  $(document).ready(function() {
+
+  
+    // quand le choix du test change
+    $( "#test").change(function() {
+      
+      // verifier le test
+      if ( $(this).val() == "nouveau") {
+        // nouveau test
+        $(".nouveauTest").show();
+        $(".config_test").show();
+        
+      } else if( $(this).val() == "aucun"){
+        $(".config_test").hide();
+        $(".nouveauTest").hide();
+      } else{
+        $(".config_test").show();
+      }
+    
+    });  
+  // document pret  
+  });
+ 
   
 
     

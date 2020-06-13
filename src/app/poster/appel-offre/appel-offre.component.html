@@ -23,7 +23,7 @@
                   <h2 class="fs-title">Informations sur l'offre:</h2>
                 </div>
                 <div class="col-5">
-                  <h2 class="steps">Step 1 - 4</h2>
+                  <h2 class="steps">Etape 1 - 4</h2>
                 </div>
               </div>
               <label class="fieldlabels">Titre: *</label>
@@ -32,11 +32,11 @@
 
               <label class="fieldlabels">Date debut: *</label> <input type="Date" name="date_debut"
                 placeholder="aujourd'hui" />
-              <label class="fieldlabels">Date fin: *</label> <input type="Date" name="date_fin" placeholder="Demain" />
+              <label class="fieldlabels">Date fin: *</label> 
+              <input type="Date" name="date_fin" placeholder="Demain" />
 
-
-
-            </div> <input type="button" name="next" class="next action-button" value="Next" />
+            </div> 
+            <input type="button" name="next" class="next action-button" value="Next" />
 
           </fieldset>
           <fieldset>
@@ -58,17 +58,19 @@
               <input type="text" name="fcomp" placeholder="Bacc + 4 en informatique" />
               <label class="fieldlabels">Salaire: *</label>
               <input type="text" name="fcomp" placeholder="180000 FCFA" />
-              <div class="form-group col-md-4">
-                <select id="inputState" class="form-control">
-                  <option selected>CDI</option>
-                  <option>CDD</option>
-                  <option>CA</option>
-                  <option>CTT</option>
-                  <option>CP</option>
-                  <option>CUI</option>
+              <label class="fieldlabels">Type de contrat: *</label>
+              <select id="inputState" class="form-control">
+               
+               <option selected="selected" disabled>Select</option>
+               <option value="cdi">CDI</option>
+               <option value="cdd">CDD</option>
+               <option value="ca">CA</option>
+               <option value="ctt">CTT</option>
+               <option value="cp">CP</option>
+               <option value="cui">CUI</option>
 
-                </select>
-              </div>
+             </select>
+             
             </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button"
               name="previous" class="previous action-button-previous" value="Previous" />
           </fieldset>
@@ -82,7 +84,7 @@
               </div>
 
 
-              <label for="country">Companie</label>
+              <label class="fieldlabels">Companie: *</label>
               <select name="Companie" id="country">
                 <option disabled selected="selected">Select</option>
                 <option value="aucune">Aucune</option>
@@ -121,6 +123,28 @@
 
 
               </div>
+                 
+              <label for="secteur">Test :</label>
+              <select name="secteur" id="test">
+                <option disabled selected="selected">Select</option>
+                <option value="aucun">Aucun</option>
+                <option value="nouveau">Nouveau</option>
+                <option value="test-comptable">Test-Comptable</option>
+                <option value="test-psycho-technique">Test-Psycho-technique</option>
+                <option value="test-Agriculture">Test-Agriculture</option>
+              </select>
+
+             <div class="nouveauTest" id="nouveauTest" style="display:none;">
+              <button class="btn btn-success btn-lg" href="#">Nouveau Test</button>
+             </div>
+             <div class="config_test" id="testConfig" style="display: none;">
+             <label class="fieldlabels">Duree Test:</label>
+             <input type="number" name="duree" placeholder="90 min">
+             <label class="fieldlabels">Date debut test:</label>
+             <input type="date" name="date_debut" placeholder="09/10/2020">
+             <label class="fieldlabels">Date fin test:</label>
+             <input type="date" name="date_fin" placeholder="09/10/2020">
+            </div>
             </div>
             <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button"
               name="previous" class="previous action-button-previous" value="Previous" />
@@ -132,7 +156,7 @@
                   <h2 class="fs-title">Termine:</h2>
                 </div>
                 <div class="col-5">
-                  <h2 class="steps">Step 4 - 4</h2>
+                  <h2 class="steps">Etape 4 - 4</h2>
                 </div>
               </div> <br><br>
               <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>

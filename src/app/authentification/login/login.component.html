@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<div class="container" id="container">
+
+  <div class="form-container sign-in-container" id="signin">
+    <form >
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your account</span>
+      <span *ngIf="errors != null" class="error">{{errors.error}}</span>
+      <input type="text" [(ngModel)]="user.username" placeholder="Username" name="username" />
+      <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" />
+      <a href="#">Forgot your password?</a>
+      <button type="submit" (click)="login()">Sign In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-right">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="footer">
+  <b> Follow me on </b>
+  <div class="icons">
+    <a href="https://github.com/kvaibhav01" target="_blank" class="social"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/vaibhavkhulbe143/" target="_blank" class="social"><i
+        class="fab fa-instagram"></i></a>
+    <a href="https://medium.com/@vaibhavkhulbe" target="_blank" class="social"><i class="fab fa-medium"></i></a>
+    <a href="https://twitter.com/vaibhav_khulbe" target="_blank" class="social"><i
+        class="fab fa-twitter-square"></i></a>
+    <a href="https://linkedin.com/in/vaibhav-khulbe/" target="_blank" class="social"><i class="fab fa-linkedin"></i></a>
+  </div>
+</div>-->

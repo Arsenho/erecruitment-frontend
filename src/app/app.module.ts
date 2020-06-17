@@ -7,10 +7,14 @@ import { AcceuilModule } from './acceuil/acceuil.module';
 import { AuthentificationModule } from './authentification/authentification.module';
 import { PosterModule } from './poster/poster.module';
 import { UserModule } from './user/user.module';
+import { MatIconModule } from '@angular/material/icon';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CookieService } from "ngx-cookie-service"
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,9 +22,11 @@ import { UserModule } from './user/user.module';
     AcceuilModule,
     AuthentificationModule,
     PosterModule,
-    UserModule
+    UserModule,
+    MatIconModule,
+    NgxPaginationModule
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

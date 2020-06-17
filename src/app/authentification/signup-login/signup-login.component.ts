@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery'
-import { LoginService } from '../login.service';
+import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup-login',
@@ -13,40 +13,13 @@ export class SignupLoginComponent implements OnInit {
   constructor(private loginService: LoginService,
     private router: Router) {
       this.user = {
-        username: '',
-        password: ''
+        nature: ''
       }
     }
 
   ngOnInit(): void {
-
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
-
-    signUpButton.addEventListener('click', () =>
-      container.classList.add('right-panel-active'));
-
-    signInButton.addEventListener('click', () =>
-      container.classList.remove('right-panel-active'));
   }
 
-  login() {
-    this.loginService.login(this.user).subscribe(
-      (data: any) => {
-        this.user = data
-        console.log(data);
-
-        if (this.user.is_active){
-          this.router.navigate(['/home'])
-        }
-      },
-      (err) => {
-        console.log(err.error);
-        this.errors = err.error
-      }
-    )
-  }
 
   signup(){
     console.log(this.user);
@@ -55,7 +28,7 @@ export class SignupLoginComponent implements OnInit {
         (data) => {
           this.user = data
           if (this.user.is_active){
-            this.router.navigate(['/login'])
+            this.router.navigate(['/segnin'])
           }
         },
         (err) => {
@@ -67,7 +40,7 @@ export class SignupLoginComponent implements OnInit {
         (data) => {
           this.user = data
           if (this.user.is_active){
-            this.router.navigate(['/login'])
+            this.router.navigate(['/signin'])
           }
         },
         (err) => {

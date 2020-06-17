@@ -25,6 +25,7 @@ main {
     align-items: center;
     position: absolute;
     top: 5%;
+    
   }
   
   .step--1,
@@ -36,6 +37,7 @@ main {
     background: #fff;
     color: #666;
     text-align: center;
+   
   }
   .step--1,
   .step--2,
@@ -53,7 +55,7 @@ main {
     overflow: hidden;
   }
   .form--header-container {
-    background: linear-gradient(to right, rgb(192, 64, 14), #919191);
+    background: linear-gradient(to right, rgb(103, 192, 103, 0.75), #919191);
     color: #fff;
     height: 6rem;
     padding: 1rem 0;
@@ -80,7 +82,7 @@ main {
   }
   
   .form__btn {
-    background: rgb(192, 64, 14);
+    background: rgb(103, 192, 103, 0.75);
     color: #fff;
     outline: none;
     border: none;
@@ -99,7 +101,7 @@ main {
     padding: 2rem 1rem;
     text-align: center;
     font-size: 1.4rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
+    box-shadow: 0.2rem 0.2rem 0.5rem rgb(103, 192, 103, 0.75);
     animation: fadeIn 0.8s;
     border-radius: 1rem;
   }
@@ -116,9 +118,9 @@ main {
   }
   
   .step-active {
-    background: rgb(192, 64, 14);
+    background: rgb(103, 192, 103, 0.75);
     color: #fff;
-    border: 1px solid rgb(192, 64, 14);
+    border: 1px solid rgb(103, 192, 103, 0.75);
   }
   @keyframes moveRight {
     0% {

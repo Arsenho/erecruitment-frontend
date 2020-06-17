@@ -12,6 +12,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { LoginComponent } from './login/login.component';
 import { ServicesModule } from '../services/services.module';
+import { PosterModule } from '../poster/poster.module';
+
 
 
 
@@ -32,12 +34,14 @@ import { ServicesModule } from '../services/services.module';
     MatTableModule,
     MatSortModule,
     NgxPaginationModule,
-    ServicesModule
+    ServicesModule,
+    PosterModule
   ],
   exports: [
     SignupLoginComponent,
     UserprofileComponent,
-    LoginComponent
+    LoginComponent,
+    PosterModule
   ],
   providers: [LoginService],
 })

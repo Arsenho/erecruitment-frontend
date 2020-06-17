@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators'
+import { catchError, retry } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +44,7 @@ export class LoginService {
       user,
       {headers: this.httpHeaders}
     ).pipe(
+      retry(30),
       catchError(this.handleError)
     )
   }

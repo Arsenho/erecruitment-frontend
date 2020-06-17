@@ -1,0 +1,14 @@
+table {
+  border: medium solid #000000;
+  width: 50%;
+  }
+  td, th {
+    border: thin solid teal;
+    width: 50%;
+    }
+   th{
+      background-color: teal;
+    }
+    td:hover{
+      background-color: darkcyan;
+    }

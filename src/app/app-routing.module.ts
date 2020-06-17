@@ -6,6 +6,8 @@ import { UserComponent } from './user/user.component';
 import { UserprofileComponent } from './authentification/userprofile/userprofile.component';
 import { AppelOffreComponent } from './poster/appel-offre/appel-offre.component';
 import { LoginComponent } from './authentification/login/login.component';
+import { AllAppelOffrePageComponent } from './poster/all-appel-offre-page/all-appel-offre-page.component';
+import { TableComponent } from './poster/table/table.component';
 
 
 const routes: Routes = [
@@ -15,8 +17,9 @@ const routes: Routes = [
   { path: 'signup', component: SignupLoginComponent },
   { path: 'signin', component: LoginComponent },
   { path: 'user', component: UserComponent },
-  { path: 'userProfile', component: UserprofileComponent },
-  { path: 'offres', component: AppelOffreComponent }
+  { path: 'profile', component: UserprofileComponent },
+  { path: 'offres', component: AllAppelOffrePageComponent },
+  { path: 'table', component: TableComponent }
 ];
 
 @NgModule({

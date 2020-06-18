@@ -7,6 +7,9 @@ import { TableComponent } from './poster/table/table.component';
 import { AppelOffreComponent } from './poster/appel-offre/appel-offre.component';
 import { CompanieComponent } from './poster/companie/companie.component';
 import { TestComponent } from './test-offre/test/test.component';
+import { DashbordtestComponent } from './test/dashbordtest/dashbordtest.component';
+import { CreateTestComponent } from './test/create-test/create-test.component';
+import { QuestionTabComponent } from './test/question-tab/question-tab.component';
 
 
 
@@ -17,7 +20,10 @@ const routes: Routes = [
    {path:'table', component:TableComponent},
    {path:'nouvelleOffre', component: AppelOffreComponent},
    {path:'companie', component:CompanieComponent},
-   {path:'test', component:TestComponent}
+   {path:'test', component:TestComponent},
+   {path:'testdashboard', component:DashbordtestComponent},
+   {path:'createtest', component: CreateTestComponent },
+   {path:'questiontable', component: QuestionTabComponent}
    
 ];
 

@@ -8,38 +8,39 @@ import * as $ from 'jquery'
 export class AllAppelOffrePageComponent implements OnInit {
 
   constructor() { }
+ngOnInit(): void {
+ 
+ // SEARCH FUNCTION
+var btsearch = {
+	init: function(search_field, searchable_elements, searchable_text_class) {
+		$(search_field).keyup(function(e){
+			e.preventDefault();
+			var query = $(this).val().toString().toLowerCase();
+			if(query){
+				// loop through all elements to find match
+				$.each($(searchable_elements), function(){
+					var title = $(this).find(searchable_text_class).text().toLowerCase();
+					if(title.indexOf(query) == -1){
+						$(this).hide();
+					} else {
+						$(this).show();
+					}
+				});
+			} else {
+				// empty query so show everything
+				$(searchable_elements).show();
+			}
+		});
+	}
+}
 
-  ngOnInit(): void {
-    //show hide case studies as needed using filters
-    $(".tv-filter-tm li").click(function () {
-      var $filterButton = $(this);
-      $(".tv-filter-tm li").removeClass("active");
-      $filterButton.addClass("active");
-      var $data = $filterButton.parent().parent().parent().parent().parent().find(".tv-case-studies");
-      var $filter,$outerFilter;
-      if ($filterButton.attr("id") === "filter__All") {
-          $data.find('.tv-case-study').removeClass("tv-case-study-show");
-          $data.find('.tv-case-study').addClass("tv-case-study-hide");
-
-          $filter = $data.find('.tv-case-study');
-
-          $filter.removeClass("tv-case-study-hide");
-          setTimeout(function () { $filter.addClass("tv-case-study-show"); },20 );
-
-        //  $filter.slideDown(800);
-      } else {
-          $filter = $data.find('.tv-case-study[data-category=' + $filterButton.attr("data-category") + ']');
-          $data.find('.tv-case-study').removeClass("tv-case-study-show");
-          $data.find('.tv-case-study').addClass("tv-case-study-hide");
-
-          $filter.removeClass("tv-case-study-hide");
-          setTimeout(function () { $filter.addClass("tv-case-study-show"); },20 );
-      }
-
-
-  });
-
+// INIT
+$(function(){
+  // USAGE: btsearch.init(('search field element', 'searchable children elements', 'searchable text class');
+  btsearch.init('#search_field', '#demonames li', '.demoname');
+});
 
   }
+
 
 }

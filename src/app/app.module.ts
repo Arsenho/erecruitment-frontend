@@ -9,12 +9,22 @@ import { PosterModule } from './poster/poster.module';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TestComponent } from './test/test.component';
-
+import { DashbordtestComponent } from './test/dashbordtest/dashbordtest.component';
+import { CreateTestComponent } from './test/create-test/create-test.component';
+import { AllTestComponent } from './test/all-test/all-test.component';
+import { EvaluationComponent } from './test/evaluation/evaluation.component';
+import { QuestionTabComponent } from './test/question-tab/question-tab.component';
+import {DataTablesModule} from 'angular-datatables';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
+    DashbordtestComponent,
+    CreateTestComponent,
+    AllTestComponent,
+    EvaluationComponent,
+    QuestionTabComponent,
    
   ],
   imports: [
@@ -24,7 +34,8 @@ import { TestComponent } from './test/test.component';
     AuthentificationModule,
     PosterModule,
     MatIconModule,
-    NgxPaginationModule 
+    NgxPaginationModule ,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

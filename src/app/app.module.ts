@@ -6,15 +6,17 @@ import { AppComponent } from './app.component';
 import { AcceuilModule } from './acceuil/acceuil.module';
 import { AuthentificationModule } from './authentification/authentification.module';
 import { PosterModule } from './poster/poster.module';
-import { UserModule } from './user/user.module';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CookieService } from "ngx-cookie-service"
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TestComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,6 @@ import { CookieService } from "ngx-cookie-service"
     AcceuilModule,
     AuthentificationModule,
     PosterModule,
-    UserModule,
     MatIconModule,
     NgxPaginationModule
   ],

@@ -1,90 +1,212 @@
-<main>
-    <div class="stepper" >
-      <div class="step--1 step-active">Step 1</div>
-      <div class="step--2">Step 2</div>
-      <div class="step--3">Step 3</div>
-      
-      <div class="step--4">Finish</div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+      <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+        <h2 id="heading">Creation d'une Offre</h2>
+        <p>{{error}}</p>
+        <form id="msform">
+          <!-- progressbar -->
+          <ul id="progressbar">
+            <li class="active" id="steps"><strong>
+                <mat-icon>local_offer</mat-icon>Offre
+              </strong></li>
+            <li id="personal">
+              <strong>
+                <mat-icon>accessibility</mat-icon>
+                Competence
+              </strong>
+            </li>
+            <li id="personal"><strong>
+                <mat-icon>work</mat-icon>Poste
+              </strong></li>
+            <li id="payment"><strong>
+                <mat-icon>home</mat-icon>Companie
+              </strong></li>
+            <li id="confirm"><strong>
+                <mat-icon>done_all</mat-icon>Termine
+              </strong></li>
+          </ul>
+
+          <fieldset>
+            <div class="form-card">
+              <div class="row">
+                <div class="col-7">
+                  <h2 class="fs-title">Informations sur l'offre:</h2>
+                </div>
+                <div class="col-5">
+                  <h2 class="steps">Etape 1 - 5</h2>
+                </div>
+              </div>
+              <label class="fieldlabels">Type d'offre: *</label>
+              <select id="inputState" class="form-control" [(ngModel)]="offer.offer_type" name="offer_type">
+                <option selected="selected" disabled>Select</option>
+                <option value="emploi">Emploi</option>
+                <option value="stage">Stage</option>
+              </select>
+              <label class="fieldlabels">Titre: *</label>
+              <input type="text" [(ngModel)]="offer.title" name="titre"
+                placeholder="Recherche d'une menagere, Emploi Etudiant...etc" />
+              <label class="fieldlabels">Date debut: *</label>
+              <input type="Date" [(ngModel)]="offer.begins" name="date_debut" placeholder="aujourd'hui" />
+
+            </div>
+            <input type="button" (click)="next()" name="next" class="next action-button" value="Next" />
+          </fieldset>
+
+
+          <fieldset>
+            <div class="form-card">
+              <div class="row">
+                <div class="col-7">
+                  <h2 class="fs-title">Informations sur les competences:</h2>
+                </div>
+                <div class="col-5">
+                  <h2 class="steps">Etape 2 - 5</h2>
+                </div>
+              </div>
+
+              <label class="fieldlabels">Niveau d'etude recherche: *</label>
+              <input type="text" [(ngModel)]="offer.level" name="fcomp" placeholder="Bacc + 4 " />
+
+
+              <label class="fieldlabels">Competences: *</label>
+              <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                [(ngModel)]="offer.competence" name="competence">
+                </textarea>
+              </div>
+              <label class="fieldlabels">Nombre d'annees d'experience recherche: *</label>
+              <input type="text" [(ngModel)]="offer.experience" name="fcomp" placeholder="5 ans" />
+
+            </div>
+            <input type="button" (click)="next()" name="next" class="next action-button" value="Next" />
+            <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+          </fieldset>
+
+          <fieldset>
+            <div class="form-card">
+              <div class="row">
+                <div class="col-7">
+                  <h2 class="fs-title">Informations sur le Poste:</h2>
+                </div>
+                <div class="col-5">
+                  <h2 class="steps">Etape 3 - 5</h2>
+                </div>
+              </div>
+              <label class="fieldlabels">Poste: *</label>
+              <input type="text" [(ngModel)]="offer.poste" name="poste" placeholder="Manager des ressources humaines" />
+
+              <label class="fieldlabels">Description du poste: *</label>
+              <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="offer.description"
+                  name="description">
+                </textarea>
+              </div>
+
+              <label class="fieldlabels">Salaire: *</label>
+              <input type="text" [(ngModel)]="offer.salary" name="fcomp" placeholder="180000 FCFA" />
+
+              <label class="fieldlabels">Type de contrat: *</label>
+              <select id="inputState" class="form-control" [(ngModel)]="offer.contract_type" name="contract_type">
+                <option selected="selected" disabled>Select</option>
+                <option value="cdi">CDI</option>
+                <option value="cdd">CDD</option>
+                <option value="ca">CA</option>
+                <option value="ctt">CTT</option>
+                <option value="cp">CP</option>
+                <option value="cui">CUI</option>
+              </select>
+            </div>
+            <input type="button" (click)="next()" name="next" class="next action-button" value="Next" />
+            <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+          </fieldset>
+          <fieldset>
+            <div class="form-card">
+              <div class="row">
+                <h2 class="fs-title">Informations sur la companie:</h2>
+                <div class="col-5">
+                  <h2 class="steps">Etape 4 - 5</h2>
+                </div>
+              </div>
+
+
+              <label class="fieldlabels">Companie: *</label>
+              <select name="Companie" id="companie">
+                <option disabled selected="selected">Select</option>
+                <option value="Particulier">Particulier</option>
+                <option value="Nouvelle">Nouvelle</option>
+                <option value="chaussure">chaussure</option>
+              </select>
+
+
+              <div class="nouvelle" style="display:none;">
+                <button class="btn btn-primary" href="companie">
+                  Nouvelle companie
+                </button>
+              </div>
+
+              <div class="particulier" style="display:none;">
+                <label for="description">Description</label>
+                <textarea name="description" type="text" value="">
+                </textarea>
+
+              </div>
+
+              <label for="secteur">Test :</label>
+              <select name="secteur" id="test">
+                <option selected="selected" disabled>Select</option>
+                <option value="aucun">Aucun</option>
+                <option value="nouveau">Nouveau</option>
+                <option value="test-comptable">Test-Comptable</option>
+                <option value="test-psycho-technique">Test-Psycho-technique</option>
+                <option value="test-Agriculture">Test-Agriculture</option>
+              </select>
+
+              <div class="nouveauTest" id="nouveauTest" style="display:none;">
+                <button class="btn btn-success btn-lg" href="#">Nouveau Test</button>
+              </div>
+              <div class="config_test" id="testConfig" style="display: none;">
+                <label class="fieldlabels">Duree Test:</label>
+                <input type="number" name="duree" placeholder="90 min">
+                <label class="fieldlabels">Nombre de questions: *</label>
+                <input type="number" name="nombre_question" placeholder="20" />
+                <label class="fieldlabels">Date debut test:</label>
+                <input type="date" name="date_debut" placeholder="09/10/2020">
+                <label class="fieldlabels">Date fin test:</label>
+                <input type="date" name="date_fin" placeholder="09/10/2020">
+              </div>
+            </div>
+            <button type="button" name="next" (click)="create()" class="next action-button">Submit</button>
+            <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+          </fieldset>
+          <fieldset>
+            <div class="form-card">
+              <div class="row">
+                <div class="col-7">
+                  <h2 class="fs-title">Termine:</h2>
+                </div>
+                <div class="col-5">
+                  <h2 class="steps">Etape 5 - 5</h2>
+                </div>
+              </div> <br><br>
+              <h2 class="purple-text text-center"><strong>{{response.success.message}}</strong></h2> <br>
+              <div class="row justify-content-center">
+                <div class="col-3"> <img src="{{response.image_url}}" class="fit-image"> </div>
+              </div> <br><br>
+              <div class="row justify-content-center">
+                <div class="col-7 text-center" *ngIf="!response.success.flag">
+                  <h5 class="purple-text text-center"><a href="signin">{{response.message}}</a></h5>
+                </div>
+                <div class="col-7 text-center" *ngIf="response.success.flag">
+                  <h5 class="purple-text text-center">
+                    <a href="offres">{{response.message}}</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
     </div>
-    <br><br>
-    <form class="form form-active">
-      <div class="form--header-container">
-        <h1 class="form--header-title">
-           Info Poste
-        </h1>
-  
-        <p class="form--header-text">
-          Tell us more about the poste.
-        </p>
-      </div>
-      <input type="text" placeholder="Title" />
-      <input type="text" placeholder="Reference" />
-      <select selected>
-          <option>Type poste</option>
-          <option>Permanent</option>
-          <option>Partiel</option>
-      </select>
-      <input type="text" placeholder="Description" />
-      <select >
-        <option disabled selected>Type Contrat</option>
-        <option>CDI</option>
-        <option>CDD</option>
-    </select>
-   
-      <button class="form__btn" id="btn-1">Next</button>
-    </form>
-    <form class="form">
-      <div class="form--header-container">
-        <h1 class="form--header-title">
-          Company Info
-        </h1>
-  
-        <p class="form--header-text">
-          Tell us more about your company.
-        </p>
-      </div>
-  
-      <input type="text" placeholder="Horaires" />
-      <input type="text" placeholder="Salaire Minimum" />
-      <input type="text" placeholder="Salaire Maximum" />
-      <input type="date" placeholder="Date Embauche" />
-      <select>
-          <option disabled selected>Niveau d'etude</option>
-          <option>Licence</option>
-          <option>Baccalaureat</option>
-          <option>Autre</option>
-      </select>
-     
-      <button class="form__btn" id="btn-2-prev">Previous</button>
-      <button class="form__btn" id="btn-2-next">Next</button>
-    </form>
-    <br><br>  <br><br>  <br><br>
-    <form class="form">
-      <div class="form--header-container">
-        <h1 class="form--header-title">
-          Company Description
-        </h1>
-  
-        <p class="form--header-text">
-          Tell us more about your company.
-        </p>
-      </div>
-      <select>
-        <option disabled selected>Secteur Activite</option>
-        <option>Immobilier</option>
-        <option>Informatique</option>
-        <option>Autre</option>
-    </select>
-      <input type="text" placeholder="Localisation" />
-      <input type="text" placeholder="Taille de l'entreprise" />
-      <select>
-        <option disabled selected>Type entreprise</option>
-        <option>PME</option>
-        <option>Autre</option>
-    </select>
-      <input type="text" placeholder="Adresse" />
-      
-      <button class="form__btn" id="btn-3">Submit</button>
-    </form>
-    <div class="form--message"></div>
-  </main>
+  </div>
+</div>

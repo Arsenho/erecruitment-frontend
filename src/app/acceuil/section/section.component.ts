@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
@@ -7,17 +8,22 @@ import * as $ from 'jquery'
 })
 export class SectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+
+  new_offer() {
+    this.router.navigate(['offres/add'])
+  }
 
   ngOnInit(): void {
-   
+
     $(function() {
       $('.scroll-down').click (function() {
         $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
         return false;
       });
     });
-    
+
   }
 
 }

@@ -8,18 +8,28 @@ import { MatSortModule } from '@angular/material/sort';
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { DataTablesModule } from 'angular-datatables';
+import { CompanieComponent } from './companie/companie.component';
+import { TestComponent } from './test/test.component';
+import{MatIconModule} from '@angular/material/icon';
+import { ServicesModule } from '../services/services.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
 @NgModule({
-  declarations: [AppelOffreComponent, AppelOffreDetailComponent, AllAppelOffrePageComponent, TableComponent],
+  declarations: [AppelOffreComponent, AppelOffreDetailComponent, AllAppelOffrePageComponent, TableComponent, CompanieComponent, TestComponent],
   imports: [
     CommonModule,
     MatPaginatorModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    DataTablesModule
+    DataTablesModule,
+    MatIconModule,
+    ServicesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AppelOffreComponent,

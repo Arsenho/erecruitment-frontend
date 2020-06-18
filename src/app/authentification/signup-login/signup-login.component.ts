@@ -28,7 +28,7 @@ export class SignupLoginComponent implements OnInit {
         (data) => {
           this.user = data
           if (this.user.is_active){
-            this.router.navigate(['/segnin'])
+            this.router.navigate(['/signin'])
           }
         },
         (err) => {

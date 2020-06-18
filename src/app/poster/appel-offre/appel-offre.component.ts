@@ -1,67 +1,216 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery' 
+import * as $ from 'jquery'
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { OfferService } from 'src/app/services/offer.service';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-appel-offre',
   templateUrl: './appel-offre.component.html',
   styleUrls: ['./appel-offre.component.css']
 })
 export class AppelOffreComponent implements OnInit {
+  logged_user
+  offer
+  response
+  error = ''
+  constructor(private router: Router,
+    private userService: UserService,
+    private offerService: OfferService) {
+      this.offer = {
+        offer_type: ''
+      }
+      this.response = {
+        message: '',
+        success: {message: ''}
+      }
+  }
 
-  constructor() { }
+  get_logged_user(){
+    this.userService.get_logged_user().subscribe(
+      (data: any) => {
+        this.logged_user = data
+      },
+      (err: HttpErrorResponse) => {
+        console.error(err);
+        this.logged_user.id = -1
+      }
+    )
+  }
+
+  create() {
+    let formData = new FormData()
+    formData.append('offer_type', this.offer.offer_type)
+    formData.append('title', this.offer.title)
+    formData.append('begins', this.offer.begins)
+    formData.append('description', this.offer.description)
+    formData.append('level', this.offer.level)
+    formData.append('experience', this.offer.experience)
+    formData.append('post', this.offer.poste)
+    formData.append('competence', this.offer.competence)
+    formData.append('salary', this.offer.salary)
+    formData.append('contract_type', this.offer.contract_type)
+    console.log(formData);
+
+    this.offerService.createOffer(formData).subscribe(
+      (data: any) => {
+        console.log(data)
+        this.response.image_url = "https://i.imgur.com/GwStPmg.png"
+        this.response.success.message = 'Success !'
+        this.response.success.flag = true
+        this.response.message = "Continuer !"
+      },
+      (err: HttpErrorResponse) => {
+        console.error(err.status);
+        if (err.status == 401){
+          console.log(err.error);
+          this.response = err.error
+          this.response.image_url = "https://img.pngio.com/free-red-letter-x-icon-download-red-letter-x-icon-png-of-letter-x-256_256.png"
+        }else if (err.status == 400){
+          console.log(err.error);
+          this.response.success.message = 'Failed !'
+          this.response.success.flag = false
+          this.response.message = err.error
+          this.response.image_url = "https://img.pngio.com/free-red-letter-x-icon-download-red-letter-x-icon-png-of-letter-x-256_256.png"
+        }
+      }
+    )
+  }
+
+  next() {
+    console.log(this.offer);
+
+  }
 
   ngOnInit(): void {
-    const formBtn1 = document.querySelector("#btn-1")
-    const formBtnPrev2 = document.querySelector("#btn-2-prev")
-    const formBtnNext2 = document.querySelector("#btn-2-next")
-    const formBtn3 = document.querySelector("#btn-3")
+    $(document).ready(function () {
+      var current_fs, next_fs, previous_fs; //fieldsets
+      var opacity;
+      var current = 1;
+      var steps = $("fieldset").length;
 
-    formBtn1.addEventListener("click", function(e) {
-      gotoNextForm(formBtn1, formBtnNext2, 1, 2)
-      e.preventDefault()
-    })
-    
-    // Next button listener of form 2
-    formBtnNext2.addEventListener("click", function(e) {
-      gotoNextForm(formBtnNext2, formBtn3, 2, 3)
-      e.preventDefault()
-    })
-    
-    // Previous button listener of form 2
-    formBtnPrev2.addEventListener("click", function(e) {
-      gotoNextForm(formBtnNext2, formBtn1, 2, 1)
-      e.preventDefault()
-    })
-    
-    // Button listener of form 3
-    formBtn3.addEventListener("click", function(e) {
-      document.querySelector(`.step--3`).classList.remove("step-active")
-      document.querySelector(`.step--4`).classList.add("step-active")
-      formBtn3.parentElement.style.display = "none"
-      document.querySelector(".form--message").innerHTML = `
-       <h1 class="form--message-text">Your account is successfully created </h1>
-       `
-      e.preventDefault()
-    })
-    const gotoNextForm = (prev, next, stepPrev, stepNext) => {
-      // Get form through the button
-      const prevForm = prev.parentElement
-      const nextForm = next.parentElement
-      const nextStep = document.querySelector(`.step--${stepNext}`)
-      const prevStep = document.querySelector(`.step--${stepPrev}`)
-      // Add active/inactive classes to both previous and next form
-      nextForm.classList.add("form-active")
-      nextForm.classList.add("form-active-animate")
-      prevForm.classList.add("form-inactive")
-      // Change the active step element
-      prevStep.classList.remove("step-active")
-      nextStep.classList.add("step-active")
-      // Remove active/inactive classes to both previous an next form
-      setTimeout(() => {
-        prevForm.classList.remove("form-active")
-        prevForm.classList.remove("form-inactive")
-        nextForm.classList.remove("form-active-animate")
-      }, 1000)
-    }
+      setProgressBar(current);
+
+      $(".next").click(function () {
+
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+
+        //Add Class Active
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({ opacity: 0 }, {
+          step: function (now) {
+            // for making fielset appear animation
+            opacity = 1 - now;
+
+            current_fs.css({
+              'display': 'none',
+              'position': 'relative'
+            });
+            next_fs.css({ 'opacity': opacity });
+          },
+          duration: 500
+        });
+        setProgressBar(++current);
+      });
+
+      $(".previous").click(function () {
+
+        current_fs = $(this).parent();
+        previous_fs = $(this).parent().prev();
+
+        //Remove class active
+        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+        //show the previous fieldset
+        previous_fs.show();
+
+        //hide the current fieldset with style
+        current_fs.animate({ opacity: 0 }, {
+          step: function (now) {
+            // for making fielset appear animation
+            opacity = 1 - now;
+
+            current_fs.css({
+              'display': 'none',
+              'position': 'relative'
+            });
+            previous_fs.css({ 'opacity': opacity });
+          },
+          duration: 500
+        });
+        setProgressBar(--current);
+      });
+
+      function setProgressBar(curStep) {
+
+
+
+      }
+
+      $(".submit").click(function () {
+        return false;
+      })
+
+    });
+
+
+    $(document).ready(function () {
+
+
+
+      $("#companie").change(function () {
+
+        if ($(this).val() == "Particulier") {
+
+          $(".particulier").show();
+          $(".nouvelle").hide();
+
+        } else if ($(this).val() == "Nouvelle") {
+
+          $(".nouvelle").show();
+          $(".particulier").hide();
+
+
+        } else {
+
+          $(".nouvelle").hide();
+          $(".particulier").hide();
+        }
+
+      });
+      // document ready
+    });
+
+
+
+
+    $(document).ready(function () {
+
+
+      // quand le choix du test change
+      $("#test").change(function () {
+
+        // verifier le test
+        if ($(this).val() == "nouveau") {
+          // nouveau test
+          $(".nouveauTest").show();
+          $(".config_test").show();
+
+        } else if ($(this).val() == "aucun") {
+          $(".config_test").hide();
+          $(".nouveauTest").hide();
+        } else {
+          $(".config_test").show();
+        }
+
+      });
+      // document pret
+    });
   }
 
 }

@@ -23,7 +23,9 @@
 .postuler.card:hover{
   display: inline;;
 }
+#next{
 
+}
 
 
 /* 4px: $spacer * 0.25 8px: $spacer * 0.5 16px: $spacer 20px: $spacer * 1.25 24px: $spacer * 1.5 */

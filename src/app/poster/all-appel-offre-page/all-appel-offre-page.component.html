@@ -1,131 +1,167 @@
-<style>
-  #filter__All:hover,
-  #filter__All.active {
-    background-color: #333333;
-    color: #fff;
-  }
+<div class="row">
+  <div class="col-md-3">
+    <header class="py-3 bg-dark">
+      <a href="#" class="sidebar-toggler position-absolute m-2 bg-white d-block d-md-none" data-toggle="collapse"
+        data-target="#sidebar-main" aria-controls="sidebar-main" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sidebar-toggler-icon"></span>
+      </a>
+      <h1 class="text-center text-white"><small>Toutes les Offres</small></h1>
+    </header>
 
-  #filter__Chemicals:hover,
-  #filter__Chemicals.active {
-    background-color: #F44336;
-    color: #fff;
-  }
-
-  #filter__Financial:hover,
-  #filter__Financial.active {
-    background-color: #9C27B0;
-    color: #fff;
-  }
-
-  #filter__HomeAppliance:hover,
-  #filter__HomeAppliance.active {
-    background-color: #1B5E20;
-    color: #fff;
-  }
-
-  #filter__InformationTechnology:hover,
-  #filter__InformationTechnology.active {
-    background-color: #aaaaaa;
-    color: #fff;
-  }
-
-  #filter__Insurance:hover,
-  #filter__Insurance.active {
-    background-color: #009688;
-    color: #fff;
-  }
-
-  #filter__Manufacturing:hover,
-  #filter__Manufacturing.active {
-    background-color: #FF5722;
-    color: #fff;
-  }
-
-  #filter__Mining:hover,
-  #filter__Mining.active {
-    background-color: #795548;
-    color: #fff;
-  }
-
-  #filter__Pharmaceutical:hover,
-  #filter__Pharmaceutical.active {
-    background-color: #607D8B;
-    color: #fff;
-  }
-
-  #filter__StateLocal:hover,
-  #filter__StateLocal.active {
-    background-color: #FFA000;
-    color: #fff;
-  }
-
-  #filter__Telecommunications:hover,
-  #filter__Telecommunications.active {
-    background-color: #219ae2;
-    color: #fff;
-  }
-</style>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 tv-icons-filter-container-tm">
-      <ul class="tv-filter-tm">
-        <li id="filter__All" class="active">All</li>
-        <li id="filter__Chemicals" data-category="chemicals">Chemicals</li>
-        <li id="filter__Financial" data-category="financial">Financial</li>
-        <li id="filter__HomeAppliance" data-category="homeappliance">Home Appliance</li>
-        <li id="filter__InformationTechnology" data-category="informationtechnology">Information Technology</li>
-        <li id="filter__Insurance" data-category="insurance">Insurance</li>
-        <li id="filter__Manufacturing" data-category="manufacturing">Manufacturing</li>
-        <li id="filter__Mining" data-category="mining">Mining</li>
-        <li id="filter__Pharmaceutical" data-category="pharmaceutical">Pharmaceutical</li>
-        <li id="filter__StateLocal" data-category="statelocal">State & Local</li>
-        <li id="filter__Telecommunications" data-category="telecommunications">Telecommunications</li>
-      </ul>
+    <!-- Main sidebar -->
+    <div id="sidebar-main" class="sidebar sidebar-default sidebar-separate sidebar-fixed">
+      <div class="sidebar-content">
+        <div class="sidebar-category sidebar-default">
+          <div class="sidebar-user">
+            <div class="category-content">
+              <h6>Categories</h6>
+              <small>offres</small>
+            </div>
+          </div>
+        </div>
+        <!-- /Sidebar Category -->
+        <div class="sidebar-category sidebar-default">
+          <div class="category-title">
+            <span>Emplois</span>
+          </div>
+          <div class="category-content">
+            <ul id="fruits-nav" class="nav flex-column">
+              <li class="nav-item" *ngFor="let category of categories">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                  {{category}}
+                </a>
+              </li>
+            </ul>
+            <!-- /Nav -->
+          </div>
+          <!-- /Category Content -->
+        </div>
+        <!-- /Sidebar Category -->
+        <div class="sidebar-category sidebar-default">
+          <div class="category-title">
+            <span>Stage</span>
+          </div>
+          <div class="category-content">
+            <ul id="sidebar-editable-nav" class="nav flex-column">
+              <li class="nav-item" *ngFor="let category of categories">
+                <a class="nav-link" (click)="getOfferByCategory(category)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                  {{category}}
+                </a>
+              </li>
+            </ul>
+            <!-- /Nav -->
+          </div>
+          <!-- /Category Content -->
+        </div>
+        <!-- /Sidebar Category -->
+      </div>
     </div>
+
+
   </div>
-</div>
+  <div class="col-md-7">
+    <h1>Ne ratez aucune offre</h1>
+    <p>Nos offres sont presentees suivant un ordre chronologique, ne manquez aucune offre.Soyez les premiers a etre
+      notifie des prochaines offres en cliquant sur le lien suivant <a href="#">clic ici</a>
+    </p>
 
-<div class="container">
-  <div class="row tv-case-studies">
-    <div class="col-md-4 tv-filter-item tv-case-study tv-case-study-show"
-      data-category="telecommunications" *ngFor="let offer of offers">
-      <article class="tv-card-tm">
-        <figure class="tv-thumb-card-tm">
-          <a href="#">
-            <img src="https://www.artelys.com/uploads/images/telecommunications/Tel2.jpg" alt="" />
-          </a>
-          <div class="tv-card-icon-tm" style="background-color:#219ae2;">
-            <a href="#">
-              <i class="material-icons">settings_input_antenna</i>
-            </a>
-          </div>
-          <div class="tv-card-category-tm" style="background-color:#219ae2;">
-            <a href="#">Telecommunication</a></div>
-        </figure>
-        <div class="tv-card-title-tm">
-          <a href="#">
-            Telecommunications
-          </a>
-        </div>
-        <div class="tv-card-sub-title-tm">
-          <p>Some Sub title important...</p>
-        </div>
-        <div class="tv-card-description-tm">
-          <p>Some Description for de case study not too long...</p>
-        </div>
-        <div class="tv-card-footer-tm">
-          <div class="row">
-            <div class="col-md-6">
-              <span class="tv-card-time-tm"><i class="material-icons">access_time</i> May 2016</span>
-            </div>
-            <div class="col-md-6 tv-card-link">
-              <a href="#"> Learn More...</a>
-            </div>
+    <div class="wrapper">
+      <table datatable class="" style="width:100%" id="offers">
+        <thead>
+          <tr>
+            <th>Liste Des Offres</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let offer of offers">
+            <td (click)="getSelectedOffer(offer)">
+              <div class="card">
+                <div class="card-header">
+                  <span class="demoname">
+                    {{offer.offer_type}} : {{offer.title}} au poste de {{offer.post}}
+                  </span>
+                </div>
+                <div class="card-body">
+                  <div class="demoname">
+                    <div>Contrat: {{offer.contract_type}}</div>
+                    <div>Etudes: {{offer.level}}</div>
+                    <div>Annee(s) d'experience: {{offer.experience}}</div>
+                    <div>Competence(s): {{offer.competence}}</div>
+                    <div>Salaire: {{offer.salary}}</div>
+                    <div>{{offer.description}}</div>
+                  </div>
+
+                </div>
+                <div class="card-footer">
+                  <div style="float: left;">A partir de: {{offer.begins}}</div>
+                  <div style="float: right;">
+                    <div class="postuler">
+                      <button type="button" class="btn btn-outline-success">Postuler</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+  <div class="col-md-2">
+    <br />
+    <br />
+    <br />
+    <div class="card">
+      <div class="card-body" style="text-align: center;">
+        <b>Partenaires</b>
+      </div><br />
+      <div class="card">
+        <div class="card-body">
+          <div class="sblogos__col">
+            <a href="#" class="sblogos__link"><img class="sblogos__img" src="./../../../assets/img/logo1.webp"
+                alt="logo" width="100%" /></a>
           </div>
 
+        </div><br />
+        <div class="card">
+          <div class="card-body">
+            <div class="sblogos__col">
+              <a href="#" class="sblogos__link">
+                <img class="sblogos__img" src="./../../../assets/img/logo2.jpg" alt="logo" width="100%" /></a>
+            </div>
+          </div><br />
+          <div class="card">
+            <div class="card-body">
+              <div class="sblogos__col">
+                <a href="#" class="sblogos__link"><img class="sblogos__img" src="./../../../assets/img/logo3.png"
+                    width="100%" alt="logo" /></a>
+              </div>
+
+            </div><br />
+            <div class="card">
+              <div class="card-body">
+                <div class="sblogos__col">
+                  <a href="#" class="sblogos__link"><img class="sblogos__img" width="100%"
+                      src="./../../../assets/img/logo5.png" alt="logo" /></a>
+                </div>
+
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="sblogos__col">
+                    <a href="#" class="sblogos__link"><img class="sblogos__img" width="100%"
+                        src="./../../../assets/img/logo6.png" alt="logo" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </article>
-      <!-- End Card Item -->
+      </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import * as $ from 'jquery'
 import { OfferService } from 'src/app/services/offer.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -7,15 +7,25 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './all-appel-offre-page.component.html',
   styleUrls: ['./all-appel-offre-page.component.css']
 })
-export class AllAppelOffrePageComponent implements OnInit {
+export class AllAppelOffrePageComponent implements OnInit, AfterContentInit {
   offers = [
     {
       title: '',
-      description: ''
+      description: '',
+      offer_type: '',
+      contract_type: '',
+      level: '',
+      experience: '',
+      competence: '',
+      salary: '',
+      post: '',
+      begins: Date().toString()
     }
   ]
+  categories = []
   constructor(private offerService: OfferService) {
     this.getOffers()
+    this.getOfferCategories()
   }
 
   getOffers() {
@@ -31,37 +41,38 @@ export class AllAppelOffrePageComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {
-    //show hide case studies as needed using filters
-    $(".tv-filter-tm li").click(function () {
-      var $filterButton = $(this);
-      $(".tv-filter-tm li").removeClass("active");
-      $filterButton.addClass("active");
-      var $data = $filterButton.parent().parent().parent().parent().parent().find(".tv-case-studies");
-      var $filter, $outerFilter;
-      if ($filterButton.attr("id") === "filter__All") {
-        $data.find('.tv-case-study').removeClass("tv-case-study-show");
-        $data.find('.tv-case-study').addClass("tv-case-study-hide");
+  getOfferCategories(){
+    this.offerService.getOfferCategory().subscribe(
+      (data: any) => {
+        this.categories = data
+        console.log(data);
 
-        $filter = $data.find('.tv-case-study');
-
-        $filter.removeClass("tv-case-study-hide");
-        setTimeout(function () { $filter.addClass("tv-case-study-show"); }, 20);
-
-        //  $filter.slideDown(800);
-      } else {
-        $filter = $data.find('.tv-case-study[data-category=' + $filterButton.attr("data-category") + ']');
-        $data.find('.tv-case-study').removeClass("tv-case-study-show");
-        $data.find('.tv-case-study').addClass("tv-case-study-hide");
-
-        $filter.removeClass("tv-case-study-hide");
-        setTimeout(function () { $filter.addClass("tv-case-study-show"); }, 20);
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err.error)
       }
+    )
+  }
 
-
-    });
-
+  getOfferByCategory(category){
+    console.log(category);
 
   }
+
+  getSelectedOffer(offer) {
+    console.log(offer);
+
+  }
+
+
+  ngAfterContentInit(): void {
+    //Called after ngOnInit when the component's or directive's content has been initialized.
+    //Add 'implements AfterContentInit' to the class.
+  }
+
+  ngOnInit(): void {
+
+  }
+
 
 }

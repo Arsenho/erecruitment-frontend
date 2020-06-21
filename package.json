@@ -29,6 +29,7 @@
     "datatables.net-dt": "^1.10.21",
     "jquery": "^3.5.1",
     "ngx-cookie-service": "^3.0.4",
+    "jquery-datatables-checkboxes": "^1.2.12",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

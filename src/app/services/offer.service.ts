@@ -45,4 +45,11 @@ export class OfferService {
     )
   }
 
+  getOfferCategory(): Observable<any> {
+    return this.http.get(
+      '/api/offers/categories/',
+      {headers: this.httpHeaders}
+    )
+  }
+
 }

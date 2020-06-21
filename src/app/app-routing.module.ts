@@ -9,6 +9,9 @@ import { AllAppelOffrePageComponent } from './poster/all-appel-offre-page/all-ap
 import { TableComponent } from './poster/table/table.component';
 import { CompanieComponent } from './poster/companie/companie.component';
 import { TestComponent } from './test-offre/test/test.component';
+import { DashbordtestComponent } from './test/dashbordtest/dashbordtest.component';
+import { CreateTestComponent } from './test/create-test/create-test.component';
+import { QuestionTabComponent } from './test/question-tab/question-tab.component';
 
 
 const routes: Routes = [

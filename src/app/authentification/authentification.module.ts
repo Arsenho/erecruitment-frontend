@@ -6,13 +6,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { UserprofileComponent } from './userprofile/userprofile.component';
-import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
+
 import { LoginComponent } from './login/login.component';
 import { ServicesModule } from '../services/services.module';
 import { PosterModule } from '../poster/poster.module';
+import { AppMaterialModule } from '../app-material/app-material.module';
 
 
 
@@ -30,12 +29,10 @@ import { PosterModule } from '../poster/poster.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule,
-    MatTableModule,
-    MatSortModule,
     NgxPaginationModule,
     ServicesModule,
-    PosterModule
+    PosterModule,
+    AppMaterialModule
   ],
   exports: [
     SignupLoginComponent,

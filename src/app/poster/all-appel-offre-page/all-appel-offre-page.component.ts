@@ -2,6 +2,7 @@ import { Component, OnInit, AfterContentInit } from '@angular/core';
 import * as $ from 'jquery'
 import { OfferService } from 'src/app/services/offer.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TestService } from 'src/app/services/test.service';
 @Component({
   selector: 'app-all-appel-offre-page',
   templateUrl: './all-appel-offre-page.component.html',
@@ -22,8 +23,10 @@ export class AllAppelOffrePageComponent implements OnInit, AfterContentInit {
       begins: Date().toString()
     }
   ]
+  tests = []
   categories = []
-  constructor(private offerService: OfferService) {
+  constructor(private offerService: OfferService,
+    private testService: TestService) {
     this.getOffers()
     this.getOfferCategories()
   }

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { OfferService } from 'src/app/services/offer.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TestService } from 'src/app/services/test.service';
 @Component({
   selector: 'app-appel-offre',
   templateUrl: './appel-offre.component.html',
@@ -16,7 +17,9 @@ export class AppelOffreComponent implements OnInit {
   error = ''
   constructor(private router: Router,
     private userService: UserService,
-    private offerService: OfferService) {
+    private offerService: OfferService,
+    private testService: TestService) {
+      this.getAllTests()
       this.offer = {
         offer_type: ''
       }
@@ -34,6 +37,18 @@ export class AppelOffreComponent implements OnInit {
       (err: HttpErrorResponse) => {
         console.error(err);
         this.logged_user.id = -1
+      }
+    )
+  }
+
+  getAllTests(){
+    this.testService.getTests().subscribe(
+      (data: any) => {
+        console.log(data)
+      },
+      (err: HttpErrorResponse) => {
+        console.error(err);
+
       }
     )
   }

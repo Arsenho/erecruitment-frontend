@@ -17,7 +17,6 @@ import { QuestionTabComponent } from './test/question-tab/question-tab.component
 import { DataTablesModule } from 'angular-datatables';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { ApplyToOfferComponent } from './dashbord/apply-to-offer/apply-to-offer.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { ApplyToOfferComponent } from './dashbord/apply-to-offer/apply-to-offer.
     AllTestComponent,
     EvaluationComponent,
     QuestionTabComponent,
-    ApplyToOfferComponent,
 
   ],
   imports: [

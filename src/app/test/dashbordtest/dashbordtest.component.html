@@ -1,71 +1,298 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<div class="main">
+  <div class="left">
+    <ul>
+      <li class="menu-heading">OnelineRecrute</li>
+      
+    <li><a data-toggle="tab" href="#overview"><i class="fa fa-home fa-lg"></i> Overview</a></li>
+    <li><a data-toggle="tab" href="#landing"><i class="fa fa-rocket fa-lg"></i> Repartition des resultats pour les candidats ayant eu un %>50 par test</a></li>
+    <li><a data-toggle="tab" href="#performance"><i class="fa fa-tachometer fa-lg"></i> Repartition des resultats de candidats par test</a></li>
+      <li><a data-toggle="tab" href="#analytics"><i class="fa fa-line-chart fa-lg"></i> graphiques</a></li>
+      <li><a data-toggle="tab" href="#candidates"><i class="fa fa-users fa-lg"></i> Meilleurs profil</a></li>
+     <li><a data-toggle="tab" href="#candidates"><i class="fa fa-users fa-lg"></i> Nombre de candidats ayant participe a un test</a></li>
+      <li><a data-toggle="tab" href="#invoices"><i class="fa fa-files-o fa-lg"></i> Liste des candidats ayant obtenu %>50</a></li>
 
-<div class="container">
-	<div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
-              <div class="list-group">
-                <a href="#" class="list-group-item active text-center">
-                  <h4 class="glyphicon glyphicon-plane"></h4><br/>Flight
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-road"></h4><br/>Train
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-home"></h4><br/>Hotel
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Restaurant
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Credit Card
-                </a>
+      <li class="active"><a data-toggle="tab" href="#user-profile"><i class="fa fa-street-view fa-lg"></i> User Profile</a></li>
+     
+    </ul>
+  </div>
+  <div class="right"> 
+    <div class="tab-content">
+      <!-- Overview -->
+      <div id="overview" class="tab-pane fade">
+       
+        <div class="content">
+          <div class="card">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores cum quibusdam sint consequatur nobis qui obcaecati impedit facilis aliquam vero itaque dignissimos, temporibus laudantium aperiam quam quisquam ducimus facere adipisci?</p>
+          </div>
+          <div class="card">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores cum quibusdam sint consequatur nobis qui obcaecati impedit facilis aliquam vero itaque dignissimos, temporibus laudantium aperiam quam quisquam ducimus facere adipisci?</p>
+          
+            <li class="active"><a data-toggle="tab" href="#user-profile"><i class="fa fa-street-view fa-lg"></i> User Profile</a></li>
+          </div><br>
+          <div class="card">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores cum quibusdam sint consequatur nobis qui obcaecati impedit facilis aliquam vero itaque dignissimos, temporibus laudantium aperiam quam quisquam ducimus facere adipisci?</p>
+            <li class="active"><a data-toggle="tab" href="#user-profile"><i class="fa fa-street-view fa-lg"></i> User Profile</a></li>
+
+          </div>
+          <div class="card">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores cum quibusdam sint consequatur nobis qui obcaecati impedit facilis aliquam vero itaque dignissimos, temporibus laudantium aperiam quam quisquam ducimus facere adipisci?</p>
+            <li class="active"><a data-toggle="tab" href="#user-profile"><i class="fa fa-street-view fa-lg"></i> User Profile</a></li>
+
+          </div>
+          
+        </div>
+      </div>
+      <!-- Performance -->
+      <div id="performance" class="tab-pane fade">
+        
+              </div>
+           
+      <!-- Profils -->
+      <div id="analytics" class="tab-pane fade">
+        <div class="header">
+            <h4>Analytics</h4>
+           </div>
+        <div class="content">
+          <div class="row">
+            
+              <div class="revenue">
+                <h4>Differents <small class="pull-right">graphs</small></h4>
+                <div class="card" style="height: 400px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                  </div>
+                </div>
+              </div>
+           
+           
+          </div>
+     
+          
+        </div>
+      </div>
+      <!-- Landing -->
+      <div id="landing" class="tab-pane fade">
+        <div class="header">
+            <h4>Offres</h4>
+            
+          </div>
+          
+        <div class="content">
+          <h3 class="text-center">
+            Veuillez consulter toutes vos offres <br>
+            <small> pour en evaluer les statistiques <a href="#">Voir plus ...</a></small>
+          </h3>
+
+          <div class="row">
+            <div class=card>
+              <div class=cardcontent>
+                <p>jeudi, Juillet 16, 2016</p>
+                <h3>Recrutement berceuse</h3>
+                <p>Recherche d'une berceuse<br> avec bacc</p>
+                
+              </div>
+              <div class=cardfooter>
+                <button class="btn btn-info">Consulter</button>
+                     </div>
+            
+          
+            </div>
+            <div class=card>
+              <div class=cardcontent>
+                <p>jeudi, Juillet 16, 2016</p>
+                <h3>Recrutement berceuse</h3>
+                <p>Recherche d'une berceuse<br> avec bacc</p>
+                
+              </div>
+              <div class=cardfooter>
+                <button class="btn btn-info">Consulter</button>
+                     </div>
+            
+          
+            </div>
+            <div class=card>
+              <div class=cardcontent>
+                <p>jeudi, Juillet 16, 2016</p>
+                <h3>Recrutement berceuse</h3>
+                <p>Recherche d'une berceuse<br> avec bacc</p>
+                
+              </div>
+              <div class=cardfooter>
+                <button class="btn btn-info">Consulter</button>
+                     </div>
+            
+          
+            </div>
+          </div>
+         
+        </div>
+      </div>
+      <!-- Projects -->
+      <div id="projects" class="tab-pane fade">
+        <div class="header">
+            <h4>bienvenu</h4>
+            
+         
+          </div>
+          <div class="row">
+            
+          </div>
+        </div>
+      </div>
+      <!-- User Profile -->
+      <div id="user-profile" class="tab-pane fade in active">
+        
+        <div class="content">
+          <div class="row">
+           
+            
+          </div>
+        </div>
+      </div>
+      <!-- Candidates -->
+      <div id="candidates" class="tab-pane fade">
+        <div class="header">
+          <h4>vos meilleurs profils</h4>
+        </div>
+        <div class="content">
+          <div class="row">
+        
+            <div class="col-sm-4 candid-card">
+              <div class="card-4">
+                <img src="https://bit.ly/2TCl1lG" class="img-responsive main-img"/>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <img src="https://bit.ly/2Z9sZUH" class="img-responsive img-circle img-thumbnail pull-left">
+                    <h5>Mathilda Campbell <br><small><i class="fa fa-map-marker"></i> cameroun</small></h5>
+                  </div>
+                  <div class="col-sm-2 text-right">
+                    <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-cog fa-lg"></i></a>
+                  </div>
+                </div>
+                <hr>
+                <div class="row text-center py-15">
+                  <div class="col-sm-6">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-envelope"></i> Nouveau Message</button>
+                  </div>
+                  <div class="col-sm-6 text-green">
+                    <small class="mt-5"><i class="fa fa-check"></i> Disponible</small>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            
+            <div class="col-sm-4 candid-card">
+              <div class="card-4">
+                <img src="https://bit.ly/2Z6stLb" class="img-responsive main-img"/>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <img src="https://bit.ly/2Z4W1cd" class="img-responsive img-circle img-thumbnail pull-left">
+                    <h5>Mathilda Campbell <br><small><i class="fa fa-map-marker"></i> chine</small></h5>
+                  </div>
+                  <div class="col-sm-2 text-right">
+                    <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-cog fa-lg"></i></a>
+                  </div>
+                </div>
+                <hr>
+                <div class="row text-center py-15">
+                  <div class="col-sm-6">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-envelope"></i> Nouveau Message</button>
+                  </div>
+                  <div class="col-sm-6 text-green">
+                    <small class="mt-5"><i class="fa fa-check"></i> Non disponible</small>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
-                <!-- flight section -->
-                <div class="bhoechie-tab-content active">
-                    <div class="center">
-                      <h1 class="glyphicon glyphicon-plane" style="font-size:14em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Flight Reservation</h3>
-                    </div>
-                </div>
-                <!-- train section -->
-                <div class="bhoechie-tab-content">
-                  <div class="center">
-                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 candid-card">
+              <div class="card-4">
+                <img src="https://bit.ly/30evAhw" class="img-responsive main-img"/>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <img src="https://bit.ly/2KP3DX7" class="img-responsive img-circle img-thumbnail pull-left">
+                    <h5>Mathilda Campbell <br><small><i class="fa fa-map-marker"></i> Italie</small></h5>
+                  </div>
+                  <div class="col-sm-2 text-right">
+                    <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-cog fa-lg"></i></a>
                   </div>
                 </div>
-    
-                <!-- hotel search -->
-                <div class="bhoechie-tab-content">
-                  <div class="center">
-                      <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
+                <hr>
+                <div class="row text-center py-15">
+                  <div class="col-sm-6">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-envelope"></i> Nouveau Message</button>
+                  </div>
+                  <div class="col-sm-6 text-green">
+                    <small class="mt-5"><i class="fa fa-check"></i> Disponible</small>
                   </div>
                 </div>
-                <div class="bhoechie-tab-content">
-                  <div class="center">
-                      <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
-                  </div>
-                </div>
-                <div class="bhoechie-tab-content">
-                  <div class="center">
-                      <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
-                  </div>
-                </div>
+              </div>
             </div>
+            <div class="col-sm-4 candid-card">
+              <div class="card-4">
+                <img src="https://bit.ly/2KQ3se3" class="img-responsive main-img"/>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <img src="https://bit.ly/2ZjhWMZ" class="img-responsive img-circle img-thumbnail pull-left">
+                    <h5>Mathilda Campbell <br><small><i class="fa fa-map-marker"></i> India</small></h5>
+                  </div>
+                  <div class="col-sm-2 text-right">
+                    <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-cog fa-lg"></i></a>
+                  </div>
+                </div>
+                <hr>
+                <div class="row text-center py-15">
+                  <div class="col-sm-6">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-envelope"></i> New Message</button>
+                  </div>
+                  <div class="col-sm-6 text-green">
+                    <small class="mt-5"><i class="fa fa-check"></i> Available for Hire</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 candid-card">
+              <div class="card-4">
+                <img src="https://bit.ly/33JBVUr" class="img-responsive main-img"/>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <img src="https://bit.ly/2YSiUjI" class="img-responsive img-circle img-thumbnail pull-left">
+                    <h5>Mathilda Campbell <br><small><i class="fa fa-map-marker"></i> India</small></h5>
+                  </div>
+                  <div class="col-sm-2 text-right">
+                    <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-cog fa-lg"></i></a>
+                  </div>
+                </div>
+                <hr>
+                <div class="row text-center py-15">
+                  <div class="col-sm-6">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-envelope"></i> Nouveau Message</button>
+                  </div>
+                  <div class="col-sm-6 text-green">
+                    <small class="mt-5"><i class="fa fa-check"></i> Disponible</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- Invoices -->
+      <div id="invoices" class="tab-pane fade">
+        
+        <div class="content">
+         
+
+      
   </div>
 </div>

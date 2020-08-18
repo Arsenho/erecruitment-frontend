@@ -1,0 +1,15 @@
+table.table{
+    width: 300px;
+    border-collapse:collapse;
+    float: left;
+  }
+  table.table:last-of-type{
+    margin-left:10px;
+  }
+  table.table th{
+    text-align:left;
+  }
+  
+  table.table tbody tr.selected {
+      background-color: #f0f0f0;
+  }

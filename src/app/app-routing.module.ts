@@ -10,6 +10,9 @@ import { TestComponent } from './test-offre/test/test.component';
 import { DashbordtestComponent } from './test/dashbordtest/dashbordtest.component';
 import { CreateTestComponent } from './test/create-test/create-test.component';
 import { QuestionTabComponent } from './test/question-tab/question-tab.component';
+import { PostulerComponent } from './poster/postuler/postuler.component';
+import { AppelOffreDetailComponent } from './poster/appel-offre-detail/appel-offre-detail.component';
+import { SignupLoginComponent } from './authentification/signup-login/signup-login.component';
 
 
 
@@ -23,7 +26,11 @@ const routes: Routes = [
    {path:'test', component:TestComponent},
    {path:'testdashboard', component:DashbordtestComponent},
    {path:'createtest', component: CreateTestComponent },
-   {path:'questiontable', component: QuestionTabComponent}
+   {path:'questiontable', component: QuestionTabComponent},
+   {path:'postuler', component: PostulerComponent},
+   {path:'offre-detail', component: AppelOffreDetailComponent },
+   {path:'sign', component: SignupLoginComponent }
+   
    
 ];
 

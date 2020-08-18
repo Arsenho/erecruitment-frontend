@@ -10,13 +10,12 @@ import { MatTableModule } from '@angular/material/table';
 import { DataTablesModule } from 'angular-datatables';
 import { CompanieComponent } from './companie/companie.component';
 import { TestComponent } from './test/test.component';
-import{MatIconModule} from '@angular/material/icon';
-
-
+import { PostulerComponent } from './postuler/postuler.component';
+import { AcceuilModule } from '../acceuil/acceuil.module';
 
 
 @NgModule({
-  declarations: [AppelOffreComponent, AppelOffreDetailComponent, AllAppelOffrePageComponent, TableComponent, CompanieComponent, TestComponent],
+  declarations: [AppelOffreComponent, AppelOffreDetailComponent, AllAppelOffrePageComponent, TableComponent, CompanieComponent, TestComponent, PostulerComponent],
   imports: [
     CommonModule,
     MatPaginatorModule,
@@ -24,10 +23,13 @@ import{MatIconModule} from '@angular/material/icon';
     MatPaginatorModule,
     MatSortModule,
     DataTablesModule,
-    MatIconModule
+    AcceuilModule
+    
+    
   ],
   exports:[
     AppelOffreComponent,AppelOffreDetailComponent, AllAppelOffrePageComponent,TableComponent, MatTableModule,MatPaginatorModule, MatSortModule
-  ]
+  ,PostulerComponent]
 })
 export class PosterModule { }
+

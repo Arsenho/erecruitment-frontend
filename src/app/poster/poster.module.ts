@@ -10,9 +10,8 @@ import { TestComponent } from './test/test.component';
 import { ServicesModule } from '../services/services.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialModule } from '../app-material/app-material.module';
-
-
-
+import { PostulerComponent } from './postuler/postuler.component';
+import { AcceuilModule } from '../acceuil/acceuil.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +21,13 @@ import { AppMaterialModule } from '../app-material/app-material.module';
     TableComponent,
     CompanieComponent,
     TestComponent,
+    AppelOffreComponent,
+    AppelOffreDetailComponent,
+    AllAppelOffrePageComponent,
+    TableComponent,
+    CompanieComponent,
+    TestComponent,
+    PostulerComponent,
   ],
   imports: [
     CommonModule,
@@ -29,13 +35,19 @@ import { AppMaterialModule } from '../app-material/app-material.module';
     ServicesModule,
     FormsModule,
     ReactiveFormsModule,
-    AppMaterialModule
+    AppMaterialModule,
+    AcceuilModule,
   ],
   exports: [
     AppelOffreComponent,
     AppelOffreDetailComponent,
     AllAppelOffrePageComponent,
     TableComponent,
-  ]
+    AppelOffreComponent,
+    AppelOffreDetailComponent,
+    AllAppelOffrePageComponent,
+    TableComponent,
+    PostulerComponent,
+  ],
 })
-export class PosterModule { }
+export class PosterModule {}

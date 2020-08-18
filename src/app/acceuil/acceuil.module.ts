@@ -16,13 +16,15 @@ import { CookieService } from "ngx-cookie-service"
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    SectionComponent,
-    FooterComponent,
-    Section1Component,
-    HomepageComponent,
     SectionTwoComponent,
-    SectionOneComponent,
+      SectionOneComponent,
+      HeaderComponent,
+      SectionComponent,
+      FooterComponent,
+      Section1Component,
+      HomepageComponent,
+      SectionOneComponent,
+      SectionTwoComponent
   ],
   imports: [
     FormsModule,
@@ -32,13 +34,15 @@ import { CookieService } from "ngx-cookie-service"
     ServicesModule,
   ],
   exports: [
-    HeaderComponent,
-    SectionComponent,
-    FooterComponent,
-    Section1Component,
-    HomepageComponent,
     SectionTwoComponent,
-    SectionOneComponent,
+      SectionOneComponent,
+      HeaderComponent,
+      SectionComponent,
+      FooterComponent,
+      Section1Component,
+      HomepageComponent,
+      SectionOneComponent,
+      SectionTwoComponent
   ],
   providers: [
     CookieService
@@ -46,3 +50,4 @@ import { CookieService } from "ngx-cookie-service"
 })
 
 export class AcceuilModule { }
+

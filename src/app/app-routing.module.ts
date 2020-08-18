@@ -20,6 +20,7 @@ import { AnsweredQuestionsPerTestComponent } from './dashboard/answered-question
 import { ParticipantPercentagePerTestComponent } from './dashboard/participant-percentage-per-test/participant-percentage-per-test.component';
 import { PostulerComponent } from './poster/postuler/postuler.component';
 import { AppelOffreDetailComponent } from './poster/appel-offre-detail/appel-offre-detail.component';
+import { DashboardMainComponent } from './dashboard/dashboard-main/dashboard-main.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,6 @@ const routes: Routes = [
   { path: 'offres', component: AllAppelOffrePageComponent },
   { path: 'table', component: TableComponent },
   { path: 'offres/add', component: AppelOffreComponent },
-  //{ path: 'candidate/apply', component: ApplyComponent },
   { path: 'companie', component: CompanieComponent },
   { path: 'test', component: TestComponent },
   { path: 'dashboard/applicants-per-period', component: ApplicantsPerPeriodComponent },
@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'dashboard/answered_questions-per-test', component: AnsweredQuestionsPerTestComponent },
   { path: 'dashboard/participant-percentage-per-test', component: ParticipantPercentagePerTestComponent },
   { path: 'testdashboard', component: DashbordtestComponent},
-
+  { path: 'dashboard', component: DashboardMainComponent },
 
 /*
 const routes: Routes = [

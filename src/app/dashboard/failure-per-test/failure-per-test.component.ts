@@ -137,7 +137,7 @@ export class FailurePerTestComponent implements OnInit {
   }
 
   public setMyData(): any {
-    this.dashboardService.getNumFailurePerTestForOffer(this.current_offer_id).subscribe(
+    this.dashboardService.getNumFailurePerTestForOffer(this.offer_id).subscribe(
       (data: any) => {
         this.my_data = data
         console.log(data)
@@ -167,9 +167,30 @@ export class FailurePerTestComponent implements OnInit {
     if (this.offer_id != 0){
       this.setMyData()
     }
-    this.router.navigate(['/dashboard/failure-per-test'])
+    this.router.navigate(['/dashboard'])
   }
 
+  reset_offer_id(){
+    this.offer_id = 0
+    if (this.offer_id != 0){
+      this.setMyData()
+    }
+    this.lineChartData = [
+      {
+        label: 'vide',
+        data: [Array<any>()]
+      }
+    ];
+    this.barChartData = [
+      {
+        label: 'vide',
+        data: Array<any>()
+      }
+    ];
+    this.lineChartLabels = []
+    this.barChartLabels = []
+    this.router.navigate(['/dashboard'])
+  }
 
 is_auth(groups) {
   for (let group of groups){

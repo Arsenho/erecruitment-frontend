@@ -140,7 +140,7 @@ export class ApplicantsPerPeriodComponent implements OnInit {
   }
 
   public setMyData(): any {
-    this.dashboardService.getNumParticipantPerPeriod(this.current_offer_id).subscribe(
+    this.dashboardService.getNumParticipantPerPeriod(this.offer_id).subscribe(
       (data: any) => {
         this.my_data = data
         console.log(data)
@@ -169,9 +169,30 @@ export class ApplicantsPerPeriodComponent implements OnInit {
     if (this.offer_id != 0){
       this.setMyData()
     }
-    this.router.navigate(['/dashboard/applicants-per-period'])
+    this.router.navigate(['/dashboard'])
   }
 
+  reset_offer_id(){
+    this.offer_id = 0
+    if (this.offer_id != 0){
+      this.setMyData()
+    }
+    this.lineChartData = [
+      {
+        label: 'vide',
+        data: [Array<any>()]
+      }
+    ];
+    this.barChartData = [
+      {
+        label: 'vide',
+        data: Array<any>()
+      }
+    ];
+    this.lineChartLabels = []
+    this.barChartLabels = []
+    this.router.navigate(['/dashboard'])
+  }
 
 is_auth(groups) {
   for (let group of groups){

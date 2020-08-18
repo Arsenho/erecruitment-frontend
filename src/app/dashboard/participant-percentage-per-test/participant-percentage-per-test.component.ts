@@ -169,18 +169,39 @@ export class ParticipantPercentagePerTestComponent implements OnInit {
     if (this.offer_id != 0){
       this.setMyData()
     }
-    this.router.navigate(['/dashboard/participant-percentage-per-test'])
+    this.router.navigate(['/dashboard'])
   }
 
-
-is_auth(groups) {
-  for (let group of groups){
-    if (group == 2 || group == 3){
-      return true
+  reset_offer_id(){
+    this.offer_id = 0
+    if (this.offer_id != 0){
+      this.setMyData()
     }
+    this.lineChartData = [
+      {
+        label: 'vide',
+        data: [Array<any>()]
+      }
+    ];
+    this.barChartData = [
+      {
+        label: 'vide',
+        data: Array<any>()
+      }
+    ];
+    this.lineChartLabels = []
+    this.barChartLabels = []
+    this.router.navigate(['/dashboard'])
   }
-  return false
-}
+
+  is_auth(groups) {
+    for (let group of groups){
+      if (group == 2 || group == 3){
+        return true
+      }
+    }
+    return false
+  }
 
   getAllOffers(){
     this.userService.get_logged_user().subscribe(

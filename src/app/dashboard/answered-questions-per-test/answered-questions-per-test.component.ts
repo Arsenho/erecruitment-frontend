@@ -137,7 +137,7 @@ export class AnsweredQuestionsPerTestComponent implements OnInit {
   }
 
   public setMyData(): any {
-    this.dashboardService.getAnsweredQuestionsTestForOffer(this.current_offer_id).subscribe(
+    this.dashboardService.getAnsweredQuestionsTestForOffer(this.offer_id).subscribe(
       (data: any) => {
         this.my_data = data
         console.log(data)
@@ -163,13 +163,36 @@ export class AnsweredQuestionsPerTestComponent implements OnInit {
   }
 
   set_offer_id(offer_id){
+    console.log("offre " + offer_id);
+
     this.offer_id = offer_id
     if (this.offer_id != 0){
       this.setMyData()
     }
-    this.router.navigate(['/dashboard/answered_questions-per-test'])
+    this.router.navigate(['/dashboard'])
   }
 
+  reset_offer_id(){
+    this.offer_id = 0
+    if (this.offer_id != 0){
+      this.setMyData()
+    }
+    this.lineChartData = [
+      {
+        label: 'vide',
+        data: []
+      }
+    ];
+    this.barChartData = [
+      {
+        label: 'vide',
+        data: []
+      }
+    ];
+    this.lineChartLabels = []
+    this.barChartLabels = []
+    this.router.navigate(['/dashboard'])
+  }
 
 is_auth(groups) {
   for (let group of groups){

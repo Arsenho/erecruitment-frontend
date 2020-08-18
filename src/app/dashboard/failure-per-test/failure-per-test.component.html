@@ -1,38 +1,64 @@
-<div class="flex" *ngIf="offer_id != 0">
-  <div class="row">
-    <div class="col-md-6">
-      <canvas
-        baseChart
-        [datasets]="lineChartData"
-        [labels]="lineChartLabels"
-        [options]="lineChartOptions"
-        [colors]="lineChartColors"
-        [legend]="lineChartLegend"
-        [chartType]="lineChartType"
-        [plugins]="lineChartPlugins"
-        (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)"
-      >
-      </canvas>
+<div class="content">
+  <h3 class="text-center">
+    Veuillez consulter toutes vos offres <br />
+    <small>
+      pour en evaluer les statistiques
+      <button (click)="reset_offer_id()">Voir plus ...</button>
+    </small>
+  </h3>
+
+  <div *ngIf="offer_id == 0">
+    <div class="row" *ngFor="let offer of offers">
+      <div class="card">
+        <div class="cardcontent">
+          <p>{{ offer.begins }}</p>
+          <h3>{{ offer.title }}</h3>
+          <p></p>
+        </div>
+        <div class="cardfooter">
+          <button class="btn btn-info" (click)="set_offer_id(offer.id)">
+            Consulter
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <canvas
-        baseChart
-        [datasets]="barChartData"
-        [labels]="barChartLabels"
-        [options]="barChartOptions"
-        [plugins]="barChartPlugins"
-        [legend]="barChartLegend"
-        [chartType]="barChartType"
-      >
-      </canvas>
+
+  <div *ngIf="offer_id != 0">
+    <div class="card">
+      <div class="row">
+        <div class="col-md-10">
+          <canvas
+            baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"
+          >
+          </canvas>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div *ngIf="offer_id == 0">
-  <div *ngFor="let offer of offers">
-    <p (click)="set_offer_id(offer.id)">{{offer.title}}</p>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-10">
+          <canvas
+            baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

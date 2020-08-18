@@ -10,6 +10,7 @@ import { SuccessPerTestComponent } from './success-per-test/success-per-test.com
 import { FailurePerTestComponent } from './failure-per-test/failure-per-test.component';
 import { AnsweredQuestionsPerTestComponent } from './answered-questions-per-test/answered-questions-per-test.component';
 import { ParticipantPercentagePerTestComponent } from './participant-percentage-per-test/participant-percentage-per-test.component';
+import { DashboardMainComponent } from './dashboard-main/dashboard-main.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ParticipantPercentagePerTestComponent } from './participant-percentage-
     FailurePerTestComponent,
     AnsweredQuestionsPerTestComponent,
     ParticipantPercentagePerTestComponent,
+    DashboardMainComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule, ChartsModule],
   exports: [
@@ -28,6 +30,7 @@ import { ParticipantPercentagePerTestComponent } from './participant-percentage-
     FailurePerTestComponent,
     AnsweredQuestionsPerTestComponent,
     ParticipantPercentagePerTestComponent,
+    DashboardMainComponent
   ],
 })
 export class DashboardModule {}

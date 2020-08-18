@@ -15,6 +15,19 @@ export class AppelOffreComponent implements OnInit {
   offer
   response
   error = ''
+  tests = [
+    {
+      "id":1,
+      "title":"Test psychotechnique pour IT Manager",
+      "duration":"00:00:30","initial":true,
+      "type_of_test":"psychotechnique",
+      "created":"2020-07-09T10:46:26.244256Z",
+      "modified":"2020-07-09T10:46:26.244328Z",
+      "created_by":1,
+      "questions":[],
+      "participants":[]
+    }
+  ]
   constructor(private router: Router,
     private userService: UserService,
     private offerService: OfferService,
@@ -45,6 +58,7 @@ export class AppelOffreComponent implements OnInit {
     this.testService.getTests().subscribe(
       (data: any) => {
         console.log(data)
+        this.tests = data
       },
       (err: HttpErrorResponse) => {
         console.error(err);

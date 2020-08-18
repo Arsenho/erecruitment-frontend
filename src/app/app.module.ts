@@ -16,6 +16,8 @@ import { EvaluationComponent } from './test/evaluation/evaluation.component';
 import { QuestionTabComponent } from './test/question-tab/question-tab.component';
 import { DataTablesModule } from 'angular-datatables';
 import { AppMaterialModule } from './app-material/app-material.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { ApplyToOfferComponent } from './dashbord/apply-to-offer/apply-to-offer.component'
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
     AllTestComponent,
     EvaluationComponent,
     QuestionTabComponent,
+    ApplyToOfferComponent,
 
   ],
   imports: [
@@ -36,7 +39,8 @@ import { AppMaterialModule } from './app-material/app-material.module';
     PosterModule,
     NgxPaginationModule,
     DataTablesModule,
-    AppMaterialModule
+    AppMaterialModule,
+    DashboardModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

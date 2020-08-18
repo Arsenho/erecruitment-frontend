@@ -21,7 +21,7 @@ import { AppMaterialModule } from '../app-material/app-material.module';
     AllAppelOffrePageComponent,
     TableComponent,
     CompanieComponent,
-    TestComponent
+    TestComponent,
   ],
   imports: [
     CommonModule,

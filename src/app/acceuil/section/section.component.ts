@@ -15,6 +15,10 @@ export class SectionComponent implements OnInit {
     this.router.navigate(['offres/add'])
   }
 
+  offer_list(){
+    this.router.navigate(['/offres'])
+  }
+
   ngOnInit(): void {
 
     $(function() {

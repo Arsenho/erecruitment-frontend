@@ -12,6 +12,12 @@ import { TestComponent } from './test-offre/test/test.component';
 import { DashbordtestComponent } from './test/dashbordtest/dashbordtest.component';
 import { CreateTestComponent } from './test/create-test/create-test.component';
 import { QuestionTabComponent } from './test/question-tab/question-tab.component';
+import { ApplicantsPerPeriodComponent } from './dashboard/applicants-per-period/applicants-per-period.component';
+import { CandidatesPerTestComponent } from './dashboard/candidates-per-test/candidates-per-test.component';
+import { SuccessPerTestComponent } from './dashboard/success-per-test/success-per-test.component';
+import { FailurePerTestComponent } from './dashboard/failure-per-test/failure-per-test.component';
+import { AnsweredQuestionsPerTestComponent } from './dashboard/answered-questions-per-test/answered-questions-per-test.component';
+import { ParticipantPercentagePerTestComponent } from './dashboard/participant-percentage-per-test/participant-percentage-per-test.component';
 
 
 const routes: Routes = [
@@ -22,8 +28,15 @@ const routes: Routes = [
   { path: 'offres', component: AllAppelOffrePageComponent },
   { path: 'table', component: TableComponent },
   { path: 'offres/add', component: AppelOffreComponent },
+  //{ path: 'candidate/apply', component: ApplyComponent },
   { path: 'companie', component: CompanieComponent },
-  { path: 'test', component: TestComponent }
+  { path: 'test', component: TestComponent },
+  { path: 'dashboard/applicants-per-period', component: ApplicantsPerPeriodComponent },
+  { path: 'dashboard/candidates-per-test', component: CandidatesPerTestComponent },
+  { path: 'dashboard/success-per-test', component: SuccessPerTestComponent },
+  { path: 'dashboard/failure-per-test', component: FailurePerTestComponent },
+  { path: 'dashboard/answered_questions-per-test', component: AnsweredQuestionsPerTestComponent },
+  { path: 'dashboard/participant-percentage-per-test', component: ParticipantPercentagePerTestComponent },
 
 ];
 

@@ -153,13 +153,13 @@
               </div>
 
               <label for="secteur">Test :</label>
-              <select name="secteur" id="test">
+              <select name="secteur" id="test" multiple>
                 <option selected="selected" disabled>Select</option>
-                <option value="aucun">Aucun</option>
+                <option value="aucun" *ngIf="tests==[]">Aucun</option>
                 <option value="nouveau">Nouveau</option>
-                <option value="test-comptable">Test-Comptable</option>
-                <option value="test-psycho-technique">Test-Psycho-technique</option>
-                <option value="test-Agriculture">Test-Agriculture</option>
+                <option *ngFor="let test of tests">
+                  {{test.title}}
+                </option>
               </select>
 
               <div class="nouveauTest" id="nouveauTest" style="display:none;">

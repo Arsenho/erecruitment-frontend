@@ -52,4 +52,11 @@ export class OfferService {
     )
   }
 
+  getOfferEmployer(employer_id): Observable<any> {
+    return this.http.get(
+      '/api/offers/?published_by=' + employer_id,
+      {headers: this.httpHeaders}
+    )
+  }
+
 }

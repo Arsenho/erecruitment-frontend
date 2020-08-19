@@ -3,6 +3,7 @@ import * as $ from 'jquery'
 import { OfferService } from 'src/app/services/offer.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TestService } from 'src/app/services/test.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-all-appel-offre-page',
   templateUrl: './all-appel-offre-page.component.html',
@@ -20,15 +21,24 @@ export class AllAppelOffrePageComponent implements OnInit, AfterContentInit {
       competence: '',
       salary: '',
       post: '',
-      begins: Date().toString()
+      begins: Date().toString(),
+      ends: Date().toString()
     }
   ]
   tests = []
   categories = []
   constructor(private offerService: OfferService,
-    private testService: TestService) {
+    private testService: TestService,
+    private router: Router) {
     this.getOffers()
     this.getOfferCategories()
+  }
+
+  go_to_apply(offer){
+    console.log(offer);
+
+    this.offerService.offer_id = offer.id
+    this.router.navigate(['/postuler'])
   }
 
   getOffers() {

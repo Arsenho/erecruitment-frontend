@@ -24,6 +24,7 @@ import { DashboardMainComponent } from './dashboard/dashboard-main/dashboard-mai
 
 
 const routes: Routes = [
+  { path: '', component: HomepageComponent },
   { path: 'home', component: HomepageComponent },
   { path: 'signup', component: SignupLoginComponent },
   { path: 'signin', component: LoginComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'offres/add', component: AppelOffreComponent },
   { path: 'companie', component: CompanieComponent },
   { path: 'test', component: TestComponent },
+  {path:'postuler', component: PostulerComponent},
   { path: 'dashboard/applicants-per-period', component: ApplicantsPerPeriodComponent },
   { path: 'dashboard/candidates-per-test', component: CandidatesPerTestComponent },
   { path: 'dashboard/success-per-test', component: SuccessPerTestComponent },

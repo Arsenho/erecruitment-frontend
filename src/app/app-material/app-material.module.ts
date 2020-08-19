@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -17,12 +18,14 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatCardModule
   ],
   exports: [
     MatIconModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatCardModule
   ]
 })
 export class AppMaterialModule { }

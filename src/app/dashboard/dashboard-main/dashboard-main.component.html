@@ -5,37 +5,43 @@
       <li>
         <a data-toggle="tab" href="#dashboard1">
           <i class="fa fa-rocket fa-lg"></i>
-          answered-questions-per-test
+          Repartition des question par test
         </a>
       </li>
       <li>
         <a data-toggle="tab" href="#dashboard2">
           <i class="fa fa-rocket fa-lg"></i>
-          applicants-per-period
+          Nombre de demandes par jour
         </a>
       </li>
       <li>
         <a data-toggle="tab" href="#dashboard3">
           <i class="fa fa-rocket fa-lg"></i>
-          candidates-per-test
+          Repartition des candidats par test
         </a>
       </li>
       <li>
         <a data-toggle="tab" href="#dashboard4">
           <i class="fa fa-rocket fa-lg"></i>
-          failure-per-test
+          Repartion des echoues par test
         </a>
       </li>
       <li>
         <a data-toggle="tab" href="#dashboard5">
           <i class="fa fa-rocket fa-lg"></i>
-          participant-percentage-per-test
+          Pourcentage par candidat et par test
         </a>
       </li>
       <li>
         <a data-toggle="tab" href="#dashboard6">
           <i class="fa fa-rocket fa-lg"></i>
-          success-per-test
+          Repartition des passants par test
+        </a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#dashboard7">
+          <i class="fa fa-rocket fa-lg"></i>
+          Liste Meilleurs Prolils
         </a>
       </li>
     </ul>
@@ -43,52 +49,25 @@
   <div class="right">
     <div class="tab-content">
       <div id="dashboard1" class="tab-pane fade">
-        <div class="header">
-          <h4>Repartions des questions par test</h4>
-        </div>
-
         <app-answered-questions-per-test></app-answered-questions-per-test>
-
       </div>
       <div id="dashboard2" class="tab-pane fade">
-        <div class="header">
-          <h4>Candidature par Jour</h4>
-        </div>
-
         <app-applicants-per-period></app-applicants-per-period>
-
       </div>
       <div id="dashboard3" class="tab-pane fade">
-        <div class="header">
-          <h4>Repartition des candidats par test</h4>
-        </div>
-
         <app-candidates-per-test></app-candidates-per-test>
-
       </div>
       <div id="dashboard4" class="tab-pane fade">
-        <div class="header">
-          <h4>Repartition des succes par test</h4>
-        </div>
-
         <app-failure-per-test></app-failure-per-test>
-
       </div>
       <div id="dashboard5" class="tab-pane fade">
-        <div class="header">
-          <h4>Repartition des pourcentage par test et candidat</h4>
-        </div>
-
         <app-participant-percentage-per-test></app-participant-percentage-per-test>
-
       </div>
       <div id="dashboard6" class="tab-pane fade">
-        <div class="header">
-          <h4>Repartition des succes par test</h4>
-        </div>
-
         <app-success-per-test></app-success-per-test>
-
+      </div>
+      <div id="dashboard7" class="tab-pane fade">
+        <app-best-profil></app-best-profil>
       </div>
     </div>
   </div>

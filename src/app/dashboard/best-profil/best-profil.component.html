@@ -1,0 +1,49 @@
+<div class="content">
+  <h3 class="text-center">
+    Liste des Meilleurs candidates par offre <br />
+    <small>
+      pour vous faciliter le travail
+      <button (click)="reset_offer_id()">votre liste d'offres </button>
+    </small>
+  </h3>
+
+  <div *ngIf="offer_id == 0">
+    <div class="row" *ngFor="let offer of offers">
+      <div class="card">
+        <div class="cardcontent">
+          <p>{{ offer.begins }}</p>
+          <h3>{{ offer.title }}</h3>
+          <p></p>
+        </div>
+        <div class="cardfooter">
+          <button class="btn btn-info" (click)="set_offer_id(offer.id)">
+            Consulter
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="offer_id != 0">
+    <div class="card">
+      <div class="row">
+        <div class="col-md-10">
+          <table datatable class="table table-striped" id="bestProf" style="width:100%">
+            <thead>
+              <tr>
+                <th>Nom du Candidat</th>
+                <th>Moyenne des pourcentages sur tous les tests (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let candidate of best_profiles">
+                <td>{{candidate.candidate}}</td>
+                <td>{{candidate.total_percentage}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
+

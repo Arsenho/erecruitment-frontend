@@ -17,6 +17,7 @@ import { QuestionTabComponent } from './test/question-tab/question-tab.component
 import { DataTablesModule } from 'angular-datatables';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { TestOffreModule } from './test-offre/test-offre.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     NgxPaginationModule,
     DataTablesModule,
     AppMaterialModule,
-    DashboardModule
+    DashboardModule,
+    TestOffreModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

@@ -95,10 +95,12 @@
 
                 </div>
                 <div class="card-footer">
-                  <div style="float: left;">A partir de: {{offer.begins}}</div>
+                  <div style="float: left;">Du {{offer.begins}} au {{offer.ends}}</div>
                   <div style="float: right;">
                     <div class="postuler">
-                      <button type="button" class="btn btn-outline-success">Postuler</button>
+                      <button type="button" (click)="go_to_apply(offer)" class="btn btn-outline-success">
+                        Postuler
+                      </button>
                     </div>
                   </div>
                 </div>

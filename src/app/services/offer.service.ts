@@ -9,6 +9,7 @@ import { CookieService } from "ngx-cookie-service"
 export class OfferService {
   crfsToken
   httpHeaders
+  offer_id = -1
   constructor(private http: HttpClient,
     private cookieService: CookieService) {
       this.crfsToken = this.getToken()
@@ -16,6 +17,14 @@ export class OfferService {
         'Content-Type': 'application/json',
         'Authorization': this.crfsToken
       })
+  }
+
+  setOfferId(offer){
+    this.offer_id = offer.id
+  }
+
+  getOfferId(){
+    return this.offer_id
   }
 
   getToken() {
@@ -27,6 +36,18 @@ export class OfferService {
     return this.http.post(
       '/api/offers/',
       offer,
+      //{headers: this.httpHeaders}
+    )
+  }
+
+  applyForOffer(application: FormData): Observable<any> {
+    application.append('csrfmiddlewaretoken', this.crfsToken)
+    application.append('offer', this.offer_id.toString())
+    console.log(this.offer_id);
+
+    return this.http.post(
+      '/api/applies/',
+      application,
       //{headers: this.httpHeaders}
     )
   }

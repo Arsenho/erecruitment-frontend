@@ -1,15 +1,37 @@
 <div class="inscription clearfix">
+  <form >
+    <h2>Postuler</h2>
+    <div>
+      <mat-card>
+        <mat-card-actions>
+          <button mat-button #up color="warn" (click)="onClick()">
+            <h3>Upload CV</h3>
+            <mat-icon>file_upload</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      <input type="file" #fileInput id="fileUpload" name="fileUpload"
+        accept="pdf/*" style="display:none;" />
+    </div>
+    <div style="margin-top:2em;">
+      <button mat-raised-button color="primary" type="submit" (click)="apply()">
+        Publier
+      </button>
+    </div>
+  </form>
+  <div class="message">
 
-	<form action="">
-	  <h2>Postuler</h2>
-	  <h3>Upload CV</h3>
-	  <br>
-	  <input type="file" name="file1" placeholder="uploader cv" data-help="Votre cv sera ajouter a la CVtheque de la plateforme et pourra etre utilise pour les eventuel postulations" id="pass1">
-	  <br>
-	  <br>
-	  <button>Je postule</button>
-	</form>
-	<div class="message">
-	
-	</div>
-	</div>
+    <ul  *ngIf="cv_file">
+        <li>
+            <span id="file-label">
+              Nom : {{cv_file.data.name}}
+            </span>
+        </li>
+        <li>
+          <span id="file-size">
+            Taille : {{cv_file.data.size}}
+          </span>
+      </li>
+    </ul>
+  </div>
+</div>

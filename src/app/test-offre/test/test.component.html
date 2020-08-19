@@ -1,136 +1,40 @@
-
-
 <form action="#" id="booking-form">
-    <div class="col-lg-12">
-        <div class="card " style="background-color: rgb(167, 208, 209);">
-        <div class="card-body text-center">
+  <div class="col-lg-12">
+    <div class="card" style="background-color: rgb(167, 208, 209);">
+      <div class="card-body text-center">
         <p class="card-title mt-1">
-        <a> <span  style="font-size: 1300; height: 10px;" id="time"></span></a> 
-        
+          <a> <span style="font-size: 1300; height: 10px;" id="time"></span></a>
         </p>
-        </div>
-        </div>
-        </div><br/><br/><br/>
-
-    <div class="tab-content">
-
-        <div class="tab-pane" id="step1">
-            <ul>
-                <li>
-                    <div style="text-align: center;">
-                        <label>Quel type de language est python ?</label><br/><br/>
-                        <div class="row text-center" style="display: inline; float: center;"> 
-                  
-                       <span style="text-align: right;"> <input type="checkbox" class="ch1" >
-                        <label for="vehicle1"> Interprete</label><br/>
-                    
-                        <input type="checkbox" class="ch2"/>
-                        <label for="vehicle2"> Compile</label></span>
-                        
-                        </div>
-                        </div>
-                </li>
-                <li style="list-style: none; display: inline">
-                    <button class="next-btn next-btn1" type="button">Suivant</button>
-                </li>
-            </ul>
-        </div>
-
-        <div class="tab-pane" id="step2">
-            <ul>
-                <li>
-                    <div style="text-align: center;">
-                        <label>Quel type de language est python ?</label><br/><br/>
-                        <div class="row text-center" style="display: inline; float: center;"> 
-                  
-                       <span style="text-align: right;"> <input type="checkbox" class="ch1" >
-                        <label for="vehicle1"> Interprete</label><br/>
-                    
-                        <input type="checkbox" class="ch2"/>
-                        <label for="vehicle2"> Compile</label></span>
-                        
-                        </div>
-                        </div>
-                </li>
-                <li>
-                    <button class="next-btn next-btn2" type="button">Next</button>
-                </li>
-            </ul>
-        </div>
-
-        <div class="tab-pane" id="step3">
-            <ul>
-                <li>
-                    <div style="text-align: center;">
-                        <label>Quel type de language est python ?</label><br/><br/>
-                        <div class="row text-center" style="display: inline; float: center;"> 
-                  
-                       <span style="text-align: right;"> <input type="checkbox" class="ch1" >
-                        <label for="vehicle1"> Interprete</label><br/>
-                    
-                        <input type="checkbox" class="ch2"/>
-                        <label for="vehicle2"> Compile</label></span>
-                        
-                        </div>
-                        </div>
-
-                </li>
-                <li>
-                    <button class="next-btn next-btn3" type="button">Next</button>
-                </li>
-            </ul>
-        </div>
-
-        <div class="tab-pane" id="step4">
-            <ul>
-                <li>
-                    <div style="text-align: center;">
-                        <label>Quel type de language est python ?</label><br/><br/>
-                        <div class="row text-center" style="display: inline; float: center;"> 
-                  
-                       <span style="text-align: right;"> <input type="checkbox" class="ch1" >
-                        <label for="vehicle1"> Interprete</label>
-                    
-                        <input type="checkbox" class="ch2"/>
-                        <label for="vehicle2"> Compile</label></span>
-                        
-                        </div>
-                        </div>
-                </li>
-                <li>
-                    <button class="next-btn next-btn4" type="button">Next</button>
-                </li>
-            </ul>
-        </div>
-
-        <div class="tab-pane" id="step5">
-            <ul>
-                <li>
-                    <div style="text-align: center;">
-                    <label>Quel type de language est python ?</label><br/><br/>
-                    <div class="row text-center" style="display: inline; float: center;"> 
-              
-                   <span style="text-align: right;"> <input type="checkbox" class="ch1" >
-                    <label for="vehicle1"> Interprete</label>
-                
-                    <input type="checkbox" class="ch2"/>
-                    <label for="vehicle2"> Compile</label></span>
-                    
-                    </div>
-                    </div>
-                </li>
-
-
-                <li>
-                    <button class="submit-btn" type="submit">Termine</button>
-                </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
+  <br /><br /><br />
 
- 
-
-    <div id="loader" style="display: none;">
-        <img src="//d2erq0e4xljvr7.cloudfront.net/assets/img/ring.svg">
+  <div class="tab-content">
+    <div class="tab-pane">
+      <ul>
+        <li>
+          <div style="text-align: center;">
+            <label>{{test_question.text}}</label><br /><br />
+            <div
+              class="row text-center"
+              style="display: block; float: center;"
+            >
+              <span  *ngFor="let solution of test_question_solutions" style="text-align: right;">
+                <input type="checkbox" class="ch1" (change)="get_my_answer($event, solution)"/>
+                <label for="vehicle1"> {{solution.text}}</label><br />
+              </span>
+            </div>
+          </div>
+        </li>
+        <li style="list-style: none; display: inline;">
+          <button class="next-btn" type="button" (click)="getNextQuestion()" >Suivant</button>
+        </li>
+      </ul>
     </div>
+  </div>
+
+  <div id="loader" style="display: none;">
+    <img src="//d2erq0e4xljvr7.cloudfront.net/assets/img/ring.svg" />
+  </div>
 </form>
